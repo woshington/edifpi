@@ -35,7 +35,7 @@ class AppController extends Controller {
      
     public function isAuthorized($usuario = null) {        
         if (isset($this->request->params['admin'])) {
-            return (bool)($usuario['nivel']);
+            return (bool)($usuario['admin']);
         }
         return true;          
     }    

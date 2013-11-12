@@ -18,6 +18,7 @@ class ParticipantesController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Participante->create();
+			$this->request->data['Participante']['status'] = true;
 			if ($this->Participante->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante has been saved.'));
 				return $this->redirect(array('action' => 'index'));
