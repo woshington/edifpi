@@ -79,6 +79,13 @@ class Participante extends AppModel {
 		)
 	);
 
+	public function beforeSave($options = array()){
+		if (isset($this->data[$this->alias]['senha'])) {
+            $this->data[$this->alias]['senha'] = AuthComponent::password($this->data[$this->alias]['senha']);
+        }
+        $data = explode("/", $this->data[$this->alias]['nascimento']);
+        return true;
+	}
 	public function confirmacaoSenha($confirmacaoSenha){
     	$password = $this->data['Participante']['senha']; 
     	$confirmacaoSenha = $this->data['Participante']['confirmacaoSenha'];//Security::hash($this->data['Usuario']['confirmacaoSenha'], null, true);    	

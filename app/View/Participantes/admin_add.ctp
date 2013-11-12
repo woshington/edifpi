@@ -1,13 +1,22 @@
+<script>
+	jQuery(function($){
+       $("#data").mask("99/99/9999");
+       $("#cpf").mask("999.999.999-99");	       
+	});
+</script>
 <div class="participantes form">
 <?php echo $this->Form->create('Participante'); ?>
 	<fieldset>
-		<legend><?php echo __('Admin Add Participante'); ?></legend>
+		<legend><?php echo __('Add Participante'); ?></legend>
 	<?php
 		echo $this->Form->input('nome');
-		echo $this->Form->input('cpf');
-		echo $this->Form->input('nascimento');
+		echo $this->Form->input('cpf', array('id'=>'cpf'));
+		echo $this->Form->input('nascimento', array('type'=>'text', 'id'=>'data'));
 		echo $this->Form->input('email');
-		echo $this->Form->input('senha');
+		echo $this->Form->input('senha', array('type'=>'password'));
+		echo $this->Form->input('confirmacaoSenha', array('type'=>'password'));
+		echo $this->Form->input('admin', array('type'=>'checkbox', 'label'=>'admin ?'));
+		echo $this->Form->input('status', array('type'=>'checkbox', 'label'=>'ativar ?'));
 		echo $this->Form->input('instituicao_id');
 	?>
 	</fieldset>

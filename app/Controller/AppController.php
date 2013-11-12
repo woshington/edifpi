@@ -33,15 +33,14 @@ class AppController extends Controller {
         $this->Auth->autoRedirect = false;
     }
      
-    public function isAuthorized($usuario = null) {
-        if ($usuario['status'] == false) {
-            $this->Session->setFlash('Aguardando confirmacao de pagamento!.', 'failure');
-            return false;
-        }
-         
+    public function isAuthorized($usuario = null) {        
         if (isset($this->request->params['admin'])) {
             return (bool)($usuario['nivel']);
         }
         return true;          
     }    
+    public function formatDataList($data){
+        $data_format = explode("/", $data);
+        return $data_format[2]."-".$data_format[1]."-".$data_format[0];
+    }
 }
