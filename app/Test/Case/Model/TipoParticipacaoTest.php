@@ -1,0 +1,47 @@
+<?php
+App::uses('TipoParticipacao', 'Model');
+
+/**
+ * TipoParticipacao Test Case
+ *
+ */
+class TipoParticipacaoTest extends CakeTestCase {
+
+/**
+ * Fixtures
+ *
+ * @var array
+ */
+	public $fixtures = array(
+		'app.tipo_participacao',
+		'app.tipo_participante',
+		'app.inscricao',
+		'app.participante',
+		'app.instituicao',
+		'app.atividade',
+		'app.tipo_atividade',
+		'app.inscricao_atividade'
+	);
+
+/**
+ * setUp method
+ *
+ * @return void
+ */
+	public function setUp() {
+		parent::setUp();
+		$this->TipoParticipacao = ClassRegistry::init('TipoParticipacao');
+	}
+
+/**
+ * tearDown method
+ *
+ * @return void
+ */
+	public function tearDown() {
+		unset($this->TipoParticipacao);
+
+		parent::tearDown();
+	}
+
+}
