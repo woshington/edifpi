@@ -20,6 +20,8 @@ class TipoParticipacaosController extends AppController {
 	public function admin_add() {
 		if ($this->request->is('post')) {
 			$this->TipoParticipacao->create();
+			$this->request->data['TipoParticipacao']['inicio_inscricao'] = $this->formatDataList($this->request->data['TipoParticipacao']['inicio_inscricao']);
+			$this->request->data['TipoParticipacao']['fim_inscricao'] = $this->formatDataList($this->request->data['TipoParticipacao']['fim_inscricao']);
 			if ($this->TipoParticipacao->save($this->request->data)) {
 				$this->Session->setFlash(__('The tipo participacao has been saved.'));
 				return $this->redirect(array('action' => 'index'));

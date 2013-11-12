@@ -1,39 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
-/**
- * TipoParticipacao Model
- *
- * @property TipoParticipante $TipoParticipante
- * @property Inscricao $Inscricao
- */
 class TipoParticipacao extends AppModel {
-
-/**
- * Use table
- *
- * @var mixed False or table name
- */
 	public $useTable = 'tipo_participacao';
-
-/**
- * Primary key field
- *
- * @var string
- */
 	public $primaryKey = 'idTipo_participacao';
 
-/**
- * Display field
- *
- * @var string
- */
 	public $displayField = 'descricao';
 
-/**
- * Validation rules
- *
- * @var array
- */
 	public $validate = array(
 		'idTipo_participacao' => array(
 			'numeric' => array(
@@ -97,42 +69,35 @@ class TipoParticipacao extends AppModel {
 		),
 	);
 
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * belongsTo associations
- *
- * @var array
- */
 	public $belongsTo = array(
 		'TipoParticipante' => array(
 			'className' => 'TipoParticipante',
 			'foreignKey' => 'tipo_participante_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
-/**
- * hasMany associations
- *
- * @var array
- */
 	public $hasMany = array(
 		'Inscricao' => array(
 			'className' => 'Inscricao',
 			'foreignKey' => 'tipo_participacao_id',
 			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		)
 	);
+
+	public function afterFind($results, $primary = false) {		
+		foreach ($results as $key => $val) {
+			if (isset($val['TipoParticipacao']['inicio_inscricao'])) {
+        	    $results[$key]['TipoParticipacao']['inicio_inscricao'] = $this->dateFormatAfterFind($val['TipoParticipacao']['inicio_inscricao']);
+        	}
+        	if (isset($val['TipoParticipacao']['fim_inscricao'])) {
+        	    $results[$key]['TipoParticipacao']['fim_inscricao'] = $this->dateFormatAfterFind($val['TipoParticipacao']['fim_inscricao']);
+        	}
+    	}
+    	return $results;
+	}
+
+	public function dateFormatAfterFind($dateString) {
+    	return date('d/m/Y', strtotime($dateString));
+	}
 
 }

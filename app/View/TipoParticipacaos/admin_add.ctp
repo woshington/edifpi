@@ -1,3 +1,8 @@
+<script>
+	jQuery(function($){
+       $(".data").mask("99/99/9999");       
+	});
+</script>
 <div class="tipoParticipacaos form">
 <?php echo $this->Form->create('TipoParticipacao'); ?>
 	<fieldset>
@@ -5,8 +10,8 @@
 	<?php
 		echo $this->Form->input('descricao');
 		echo $this->Form->input('valor');
-		echo $this->Form->input('inicio_inscricao');
-		echo $this->Form->input('fim_inscricao');
+		echo $this->Form->input('inicio_inscricao', array('type'=>'text', 'class'=>'data'));
+		echo $this->Form->input('fim_inscricao', array('type'=>'text', 'class'=>'data'));
 		echo $this->Form->input('tipo_participante_id');
 	?>
 	</fieldset>
