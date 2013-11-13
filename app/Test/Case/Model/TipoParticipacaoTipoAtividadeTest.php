@@ -1,11 +1,11 @@
 <?php
-App::uses('TipoAtividade', 'Model');
+App::uses('TipoParticipacaoTipoAtividade', 'Model');
 
 /**
- * TipoAtividade Test Case
+ * TipoParticipacaoTipoAtividade Test Case
  *
  */
-class TipoAtividadeTest extends CakeTestCase {
+class TipoParticipacaoTipoAtividadeTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -13,6 +13,7 @@ class TipoAtividadeTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
+		'app.tipo_participacao_tipo_atividade',
 		'app.tipo_atividade',
 		'app.atividade',
 		'app.inscricao',
@@ -30,7 +31,7 @@ class TipoAtividadeTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->TipoAtividade = ClassRegistry::init('TipoAtividade');
+		$this->TipoParticipacaoTipoAtividade = ClassRegistry::init('TipoParticipacaoTipoAtividade');
 	}
 
 /**
@@ -39,7 +40,7 @@ class TipoAtividadeTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->TipoAtividade);
+		unset($this->TipoParticipacaoTipoAtividade);
 
 		parent::tearDown();
 	}

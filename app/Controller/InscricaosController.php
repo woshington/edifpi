@@ -29,7 +29,7 @@ class InscricaosController extends AppController {
 			}
 		}
 		$participantes = $this->Inscricao->Participante->find('list');
-		$tipoParticipacaos = $this->Inscricao->TipoParticipacao->find('list');
+		$tipoParticipacaos = $this->Inscricao->TipoParticipacao->getLista();
 		$atividades = $this->Inscricao->Atividade->find('list');
 		$this->set(compact('participantes', 'tipoParticipacaos', 'atividades'));
 	}

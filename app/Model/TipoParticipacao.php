@@ -95,4 +95,17 @@ class TipoParticipacao extends AppModel {
     	}
     	return $results;
 	}
+
+	//**/
+
+	public function getLista(){
+		$tipoParticipacaos = $this->find('all');
+		$retorno  = array();
+		foreach ($tipoParticipacaos as $tipoParticipacao) {			
+			$retorno[$tipoParticipacao['TipoParticipacao']['idTipo_participacao']] = 
+				$tipoParticipacao['TipoParticipacao']['descricao']." - ".$tipoParticipacao['TipoParticipante']['descricao'].
+				" - R$ ".$tipoParticipacao['TipoParticipacao']['valor'];
+		}
+		return $retorno;
+	}
 }

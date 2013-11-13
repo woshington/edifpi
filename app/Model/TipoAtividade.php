@@ -4,6 +4,7 @@ App::uses('AppModel', 'Model');
  * TipoAtividade Model
  *
  * @property Atividade $Atividade
+ * @property TipoParticipacao $TipoParticipacao
  */
 class TipoAtividade extends AppModel {
 
@@ -13,20 +14,13 @@ class TipoAtividade extends AppModel {
  * @var mixed False or table name
  */
 	public $useTable = 'tipo_atividade';
-
+	public $displayField = 'descricao';
 /**
  * Primary key field
  *
  * @var string
  */
 	public $primaryKey = 'idTipo_atividade';
-
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'descricao';
 
 /**
  * Validation rules
@@ -86,6 +80,28 @@ class TipoAtividade extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		)
+	);
+
+
+/**
+ * hasAndBelongsToMany associations
+ *
+ * @var array
+ */
+	public $hasAndBelongsToMany = array(
+		'TipoParticipacao' => array(
+			'className' => 'TipoParticipacao',
+			'joinTable' => 'tipo_participacao_tipo_atividade',
+			'foreignKey' => 'tipo_atividade_id',
+			'associationForeignKey' => 'tipo_participacao_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
 		)
 	);
 
