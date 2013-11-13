@@ -31,6 +31,7 @@ class AppController extends Controller {
     public function beforeFilter(){        
         $this->Auth->allowedActions = array('');
         $this->Auth->autoRedirect = false;
+        $this->set('logado', $this->Session->read('Auth.User'));
     }
      
     public function isAuthorized($usuario = null) {        

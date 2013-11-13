@@ -26,6 +26,10 @@ class Participante extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'unique' => array(
+				'rule'=>array('isUnique'),
+				'message' => 'CPF ja esta em uso',				
+			)
 		),
 		'nascimento' => array(
 			'notEmpty' => array(
@@ -42,6 +46,10 @@ class Participante extends AppModel {
 				'rule' => array ('email'),
 				'message' => 'Informe um e-mail valido',
 				'required'=>true
+			),
+			'unique' => array(
+				'rule'=>array('isUnique'),
+				'message' => 'Email ja esta em uso',				
 			)
 		),
 		'senha' => array(
@@ -79,11 +87,15 @@ class Participante extends AppModel {
 		)
 	);
 
-	public function beforeSave($options = array()){
+	public function beforeValidate($options = array()){
+		// Retirando pontos e traços do cpf
+		$this->data[$this->alias]['cpf'] = str_replace("-","", str_replace(".","", $this->data[$this->alias]['cpf'])); 
+	}
+	public function beforeSave($options = array()){		
 		if (isset($this->data[$this->alias]['senha'])) {
             $this->data[$this->alias]['senha'] = AuthComponent::password($this->data[$this->alias]['senha']);
         }
-        $data = explode("/", $this->data[$this->alias]['nascimento']);
+        $this->data[$this->alias]['nascimento'] = $this->dateFormatBeforeFind($this->data[$this->alias]['nascimento']);        
         return true;
 	}
 	public function confirmacaoSenha($confirmacaoSenha){

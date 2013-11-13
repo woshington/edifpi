@@ -21,9 +21,17 @@
 	<div id="container">
 		<div id="header">
 			<h1>EDIFPI 2013</h1>
+			<span style="position: absolute; right: 15px; top: 7px; ">
+			<?php 
+				if(isset($logado)):
+					echo $logado['nome'] . " - ". $this->Html->link('logout', array('controller'=>'participantes','action'=>'logout','admin'=>0));
+				else:
+					echo $this->Html->link('login', array('controller'=>'participantes','action'=>'login','admin'=>0));
+				endif;
+			?>
+			</span>
 		</div>
-		<div id="content">
-
+		<div id="content">			
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>

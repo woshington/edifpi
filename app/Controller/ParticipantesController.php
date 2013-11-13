@@ -5,7 +5,7 @@ class ParticipantesController extends AppController {
 	public $components = array('Paginator');
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('add','admin_add');
+		$this->Auth->allow('add','loginAutomatico');
 	}
 	public function view($id = null) {
 		if (!$this->Participante->exists($id)) {
@@ -18,10 +18,10 @@ class ParticipantesController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Participante->create();
-			$this->request->data['Participante']['status'] = true;
-			if ($this->Participante->save($this->request->data)) {
+			$this->request->data['Participante']['status'] = true;			
+			if ($usuario = $this->Participante->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'loginAutomatico', $usuario['Participante']['idParticipante']));
 			} else {
 				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'));
 			}
@@ -66,7 +66,7 @@ class ParticipantesController extends AppController {
 	public function admin_add() {
 		if ($this->request->is('post')) {
 			$this->Participante->create();
-			$this->request->data['Participante']['nascimento'] = $this->formatDataList($this->request->data['Participante']['nascimento']);
+			//$this->request->data['Participante']['nascimento'] = $this->formatDataList($this->request->data['Participante']['nascimento']);
 			if ($this->Participante->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante has been saved.'));
 				return $this->redirect(array('action' => 'index'));
@@ -98,18 +98,27 @@ class ParticipantesController extends AppController {
 		$this->set(compact('instituicaos'));
 	}
 
-	public function login() {        
-        if($this->request->is('post')){        	
+	public function login() {		
+		if($this->request->is('post')){        	
             if ($this->Auth->login()) {
-                if($this->Session->read('Auth.User.nivel')){
-                    //$this->redirect($this->Auth->redirectUrl('home/progressao'));
-                }else{
+                if(!$this->Session->read('Auth.User.nivel')){                
                 	$this->redirect($this->Auth->redirectUrl(array('controller'=>'inscricaos', 'action'=>'index')));
                 }
             } else {
                 $this->Session->setFlash('O nome de usuário ou a senha estão errados. Tente novamente.');
             }
         }
+    }
+    public function loginAutomatico($idParticipante){
+    	if(!$this->Session->read('Auth.User')){
+    		if(!is_null($idParticipante)){
+				$options = array('conditions' => array('Participante.' . $this->Participante->primaryKey => $idParticipante));
+				$participante = $this->Participante->find('first', $options);			
+				if ($this->Auth->login($participante['Participante'])) {
+					$this->redirect($this->Auth->redirectUrl(array('controller'=>'inscricaos', 'action'=>'index')));
+				}
+			}
+		}
     }
     public function logout(){
     	return $this->redirect($this->Auth->logout());
