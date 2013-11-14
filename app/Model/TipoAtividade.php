@@ -20,7 +20,7 @@ class TipoAtividade extends AppModel {
  *
  * @var string
  */
-	public $primaryKey = 'idTipo_atividade';
+	public $primaryKey = 'id';
 
 /**
  * Validation rules

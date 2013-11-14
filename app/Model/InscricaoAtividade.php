@@ -1,34 +1,18 @@
 <?php
 App::uses('AppModel', 'Model');
-/**
- * InscricaoAtividade Model
- *
- * @property Inscricaoinscricao $Inscricaoinscricao
- * @property Atividadeatividade $Atividadeatividade
- */
 class InscricaoAtividade extends AppModel {
 
-/**
- * Use table
- *
- * @var mixed False or table name
- */
 	public $useTable = 'inscricao_atividade';
 
-/**
- * Primary key field
- *
- * @var string
- */
-	public $primaryKey = 'idInscricaoAtividade';
+	public $primaryKey = 'id';
 
-/**
- * Validation rules
- *
- * @var array
- */
+
+	public $virtualFields = array(
+    	'unico' => 'CONCAT(InscricaoAtividade.inscricao_id," ",InscricaoAtividade.atividade_id)'
+	);
+
 	public $validate = array(
-		'idInscricaoAtividade' => array(
+		'id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -38,7 +22,7 @@ class InscricaoAtividade extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'inscricao_idinscricao' => array(
+		'inscricao_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -48,7 +32,7 @@ class InscricaoAtividade extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'atividade_idatividade' => array(
+		'atividade_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -58,29 +42,24 @@ class InscricaoAtividade extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'unico'=>array(
+			'unique'=>array(
+				'rule'=>array('isUnique'),
+				'message'=>'Atividade ja cadastrada para essa inscricao'
+			),
+		)
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-/**
- * belongsTo associations
- *
- * @var array
- */
 	public $belongsTo = array(
-		'Inscricaoinscricao' => array(
-			'className' => 'Inscricaoinscricao',
-			'foreignKey' => 'inscricao_idinscricao',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
+		'Inscricao' => array(
+			'className' => 'Inscricao',
+			'foreignKey' => 'inscricao_id',			
 		),
-		'Atividadeatividade' => array(
-			'className' => 'Atividadeatividade',
-			'foreignKey' => 'atividade_idatividade',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
+		'Atividade' => array(
+			'className' => 'Atividade',
+			'foreignKey' => 'atividade_id',			
 		)
 	);
 }

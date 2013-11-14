@@ -1,39 +1,13 @@
 <?php
 App::uses('AppModel', 'Model');
-/**
- * Atividade Model
- *
- * @property TipoAtividade $TipoAtividade
- * @property Inscricao $Inscricao
- */
 class Atividade extends AppModel {
 
-/**
- * Use table
- *
- * @var mixed False or table name
- */
 	public $useTable = 'atividade';
 
-/**
- * Primary key field
- *
- * @var string
- */
-	public $primaryKey = 'idatividade';
+	public $primaryKey = 'id';
 
-/**
- * Display field
- *
- * @var string
- */
 	public $displayField = 'descricao';
 
-/**
- * Validation rules
- *
- * @var array
- */
 	public $validate = array(
 		'idatividade' => array(
 			'numeric' => array(
@@ -79,26 +53,13 @@ class Atividade extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-/**
- * belongsTo associations
- *
- * @var array
- */
 	public $belongsTo = array(
 		'TipoAtividade' => array(
 			'className' => 'TipoAtividade',
 			'foreignKey' => 'tipo_atividade_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
 
-/**
- * hasAndBelongsToMany associations
- *
- * @var array
- */
 	public $hasAndBelongsToMany = array(
 		'Inscricao' => array(
 			'className' => 'Inscricao',
@@ -106,13 +67,28 @@ class Atividade extends AppModel {
 			'foreignKey' => 'atividade_id',
 			'associationForeignKey' => 'inscricao_id',
 			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
 		)
 	);
 
+	public function getAtividades($tipoParticipacao){
+		$TipoParticipacao = ClassRegistry::init('TipoParticipacao');
+		$tipoParticipacao = $TipoParticipacao->findById($tipoParticipacao);
+		$tipoAtividades = $tipoParticipacao['TipoAtividade'];
+		$atividades = array();
+		$atividades['agrupados'] = array();
+		foreach ($tipoAtividades as $tipo){
+			$tpAtividades = $this->TipoAtividade->findById($tipo['TipoParticipacaoTipoAtividade']['tipo_atividade_id']);
+			if($tipo['agrupar']){
+				$atividades['agrupados'][$tipo['descricao']] = array();
+			}
+			foreach ($tpAtividades['Atividade'] as $atividade) {
+				if($tipo['agrupar']){
+					$atividades['agrupados'][$tipo['descricao']][$atividade['id']] = $atividade['titulo'];
+				}else{
+					$atividades[$atividade['id']] = $atividade['titulo'].': '.$atividade['descricao'];
+				}
+			}			
+		}
+		return $atividades;
+	}	
 }

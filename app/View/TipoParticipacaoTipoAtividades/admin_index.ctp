@@ -11,10 +11,10 @@
 	<tr>
 		<td><?php echo h($tipoParticipacaoTipoAtividade['TipoParticipacaoTipoAtividade']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($tipoParticipacaoTipoAtividade['TipoAtividade']['descricao'], array('controller' => 'tipo_atividades', 'action' => 'view', $tipoParticipacaoTipoAtividade['TipoAtividade']['idTipo_atividade'])); ?>
+			<?php echo $this->Html->link($tipoParticipacaoTipoAtividade['TipoAtividade']['descricao'], array('controller' => 'tipo_atividades', 'action' => 'view', $tipoParticipacaoTipoAtividade['TipoAtividade']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($tipoParticipacaoTipoAtividade['TipoParticipacao']['descricao'], array('controller' => 'tipo_participacaos', 'action' => 'view', $tipoParticipacaoTipoAtividade['TipoParticipacao']['idTipo_participacao'])); ?>
+			<?php echo $this->Html->link($tipoParticipacaoTipoAtividade['TipoParticipacao']['descricao'], array('controller' => 'tipo_participacaos', 'action' => 'view', $tipoParticipacaoTipoAtividade['TipoParticipacao']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $tipoParticipacaoTipoAtividade['TipoParticipacaoTipoAtividade']['id'])); ?>

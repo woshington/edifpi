@@ -20,6 +20,7 @@ class TipoParticipacaoTest extends CakeTestCase {
 		'app.instituicao',
 		'app.atividade',
 		'app.tipo_atividade',
+		'app.tipo_participacao_tipo_atividade',
 		'app.inscricao_atividade'
 	);
 
@@ -42,6 +43,14 @@ class TipoParticipacaoTest extends CakeTestCase {
 		unset($this->TipoParticipacao);
 
 		parent::tearDown();
+	}
+
+/**
+ * testGetLista method
+ *
+ * @return void
+ */
+	public function testGetLista() {
 	}
 
 }

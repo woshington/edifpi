@@ -2,8 +2,8 @@
 App::uses('AppModel', 'Model');
 class Participante extends AppModel {
 
-	public $useTable = 'Participante';
-	public $primaryKey = 'idParticipante';
+	public $useTable = 'participante';
+	public $primaryKey = 'id';
 	public $displayField = 'nome';
 
 	public $validate = array(

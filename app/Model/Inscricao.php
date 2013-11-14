@@ -1,33 +1,14 @@
 <?php
 App::uses('AppModel', 'Model');
-/**
- * Inscricao Model
- *
- * @property Participante $Participante
- * @property TipoParticipacao $TipoParticipacao
- * @property Atividade $Atividade
- */
+
 class Inscricao extends AppModel {
 
-/**
- * Use table
- *
- * @var mixed False or table name
- */
+
 	public $useTable = 'inscricao';
 
-/**
- * Primary key field
- *
- * @var string
- */
-	public $primaryKey = 'idinscricao';
+	public $primaryKey = 'id';
 
-/**
- * Validation rules
- *
- * @var array
- */
+
 	public $validate = array(
 		'idinscricao' => array(
 			'numeric' => array(
@@ -115,24 +96,13 @@ class Inscricao extends AppModel {
 		)
 	);
 
-/**
- * hasAndBelongsToMany associations
- *
- * @var array
- */
 	public $hasAndBelongsToMany = array(
 		'Atividade' => array(
 			'className' => 'Atividade',
 			'joinTable' => 'inscricao_atividade',
 			'foreignKey' => 'inscricao_id',
 			'associationForeignKey' => 'atividade_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
+			'unique' => 'keepExisting',			
 		)
 	);
 

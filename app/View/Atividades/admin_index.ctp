@@ -2,7 +2,7 @@
 	<h2><?php echo __('Atividades'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('idatividade'); ?></th>
+			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('titulo'); ?></th>
 			<th><?php echo $this->Paginator->sort('descricao'); ?></th>
 			<th><?php echo $this->Paginator->sort('tipo_atividade_id'); ?></th>
@@ -10,16 +10,16 @@
 	</tr>
 	<?php foreach ($atividades as $atividade): ?>
 	<tr>
-		<td><?php echo h($atividade['Atividade']['idatividade']); ?>&nbsp;</td>
+		<td><?php echo h($atividade['Atividade']['id']); ?>&nbsp;</td>
 		<td><?php echo h($atividade['Atividade']['titulo']); ?>&nbsp;</td>
 		<td><?php echo h($atividade['Atividade']['descricao']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($atividade['TipoAtividade']['descricao'], array('controller' => 'tipo_atividades', 'action' => 'view', $atividade['TipoAtividade']['idTipo_atividade'])); ?>
+			<?php echo $this->Html->link($atividade['TipoAtividade']['descricao'], array('controller' => 'tipo_atividades', 'action' => 'view', $atividade['TipoAtividade']['id'])); ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $atividade['Atividade']['idatividade'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $atividade['Atividade']['idatividade'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $atividade['Atividade']['idatividade']), null, __('Are you sure you want to delete # %s?', $atividade['Atividade']['idatividade'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $atividade['Atividade']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $atividade['Atividade']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $atividade['Atividade']['id']), null, __('Are you sure you want to delete # %s?', $atividade['Atividade']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

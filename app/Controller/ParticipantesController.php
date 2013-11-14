@@ -19,9 +19,9 @@ class ParticipantesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Participante->create();
 			$this->request->data['Participante']['status'] = true;			
-			if ($usuario = $this->Participante->save($this->request->data)) {
+			if ($this->Participante->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante has been saved.'));
-				return $this->redirect(array('action' => 'loginAutomatico', $usuario['Participante']['idParticipante']));
+				return $this->redirect(array('action' => 'loginAutomatico', $this->Participante->id));
 			} else {
 				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'));
 			}

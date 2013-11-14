@@ -19,7 +19,7 @@ class TipoParticipante extends AppModel {
  *
  * @var string
  */
-	public $primaryKey = 'idTipo_participante';
+	public $primaryKey = 'id';
 
 /**
  * Display field
