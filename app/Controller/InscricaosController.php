@@ -2,19 +2,31 @@
 App::uses('AppController', 'Controller');
 
 class InscricaosController extends AppController {
-	public $uses = array('Inscricao', 'Atividade', 'InscricaoAtividade');
+	public $uses = array('Inscricao', 'Atividade', 'InscricaoAtividade','Participante');
 	public $components = array('Paginator','RequestHandler');
 	public $helpers = array('Js');
 
 	public function index() {
 		$this->Inscricao->recursive = 0;
-		$this->set('inscricaos', $this->Paginator->paginate());		
+		$this->paginate = array(
+			'conditions'=>array(
+				'Participante.id'=>$this->Session->read('Auth.User.id'),
+			)
+		);
+		$this->set('inscricaos', $this->Paginator->paginate());
 	}
 
-	public function view() {
-		$id = $this->Inscricao->findByParticipanteId($this->Session->read('Auth.User.id'));
-		$options = array('conditions' => array('Inscricao.' . $this->Inscricao->primaryKey => $id['Inscricao']['id']));
-		$this->set('inscricao', $this->Inscricao->find('first', $options));
+	public function view($id = null) {
+		if (!$this->Inscricao->exists($id)) {
+			throw new NotFoundException(__('Invalid inscricao'));
+		}		
+		
+		$options = array('conditions' => array('Inscricao.' . $this->Inscricao->primaryKey => $id));
+		$inscricao = $this->Inscricao->find('first', $options);
+		if($inscricao['Participante']['id']!=$this->Session->read('Auth.User.id')){
+			throw new NotFoundException(__('Inscrição invalida para esse participante'));
+		}
+		$this->set('inscricao', $inscricao);
 	}
 
 	public function add() {
@@ -77,5 +89,29 @@ class InscricaosController extends AppController {
         if ($this->RequestHandler->isAjax()) {
             $this->set('atividades', $this->Atividade->getAtividades($this->params['url']['tipoParticipacaoId']));
         }
+    }
+    public function admin_view($idInscricao) {		
+		$options = array('conditions' => array('Inscricao.' . $this->Inscricao->primaryKey => $idInscricao));
+		$this->set('inscricao', $this->Inscricao->find('first', $options));
+	}
+    public function admin_listarNaoConfirmados(){
+    	$this->Inscricao->recursive = 0;
+    	$this->paginate =  array(
+    		'conditions'=>array(
+    			'Inscricao.status'=>false
+    		)
+    	);
+    	$this->set("inscricaos", $this->Paginator->paginate());
+    }
+
+    public function admin_confirmar($idInscricao){
+    	$participante = $this->Inscricao->find('first', array('conditions'=>array('Inscricao.id'=>$idInscricao)));
+    	$this->Inscricao->read(null, $idInscricao); 
+    	$this->Inscricao->set(array('status'=>true,'data_pagamento'=>date('Y-m-d')));
+    	if($this->Inscricao->save()){
+    		echo "<script>alert('".$participante['Participante']['nome']." confirmado!');</script>";
+    		echo "<script>window.location='".
+    			Router::url(array('controller'=>'inscricaos','action'=>'listarNaoConfirmados','admin'=>1))."'</script>";
+    	}
     }
 }

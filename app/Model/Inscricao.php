@@ -106,4 +106,12 @@ class Inscricao extends AppModel {
 		)
 	);
 
+	public function afterFind($results, $primary = false) {
+    foreach ($results as $key => $val) {
+        if (isset($val['Inscricao']['created'])) {
+            $results[$key]['Inscricao']['created'] = $this->dateFormatAfterFind($val['Inscricao']['created']);
+        }
+    }
+    return $results;
+}
 }

@@ -22,15 +22,17 @@ $(document).ready(function() {
 });
 
 function popularListaDeAtividades(atividades, idAtividade) {
-    var options = '<option value>selecione uma atividade</option>';
+    var options = '';
     if(atividades != null) {
         $.each(atividades, function(index, atividade){
-            if(idAtividade == index)
-                options += '<option selected="selected" value="' + index + '">' + atividade + '</option>';
-            else
-                options += '<option value="' + index + '">' + atividade + '</option>';
+            if(index!="agrupados"){
+                if(idAtividade == index)
+                    options += '<option selected="selected" value="' + index + '">' + atividade + '</option>';
+                else
+                    options += '<option value="' + index + '">' + atividade + '</option>';
+            }
         });
-    }
+    }        
     $('#atividades').html(options);
 }
 

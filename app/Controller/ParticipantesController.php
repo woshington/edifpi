@@ -101,8 +101,10 @@ class ParticipantesController extends AppController {
 	public function login() {		
 		if($this->request->is('post')){        	
             if ($this->Auth->login()) {
-                if(!$this->Session->read('Auth.User.nivel')){                
-                	$this->redirect($this->Auth->redirectUrl(array('controller'=>'inscricaos', 'action'=>'index')));
+                if(!$this->Session->read('Auth.User.admin')){                
+                	$this->redirect($this->Auth->redirectUrl(array('controller'=>'inscricaos', 'action'=>'index', 'admin'=>0)));
+                }else{
+                	$this->redirect($this->Auth->redirectUrl(array('controller'=>'inscricaos', 'action'=>'listarNaoConfirmados', 'admin'=>1)));
                 }
             } else {
                 $this->Session->setFlash('O nome de usuário ou a senha estão errados. Tente novamente.');
