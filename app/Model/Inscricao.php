@@ -8,9 +8,8 @@ class Inscricao extends AppModel {
 
 	public $primaryKey = 'id';
 
-
 	public $validate = array(
-		'idinscricao' => array(
+		'id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -27,30 +26,10 @@ class Inscricao extends AppModel {
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'status' => array(
-			'boolean' => array(
-				'rule' => array('boolean'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'data_pagamento' => array(
-			'date' => array(
-				'rule' => array('date'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'Participante_id' => array(
+		'participante_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -59,6 +38,11 @@ class Inscricao extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'unique' => array(
+				'rule'=>array('isUnique'),
+				'message' => 'Participante ja inscrito',
+			)
+    		
 		),
 		'tipo_participacao_id' => array(
 			'numeric' => array(
@@ -107,11 +91,18 @@ class Inscricao extends AppModel {
 	);
 
 	public function afterFind($results, $primary = false) {
-    foreach ($results as $key => $val) {
-        if (isset($val['Inscricao']['created'])) {
-            $results[$key]['Inscricao']['created'] = $this->dateFormatAfterFind($val['Inscricao']['created']);
-        }
-    }
-    return $results;
-}
+	    foreach ($results as $key => $val) {
+	        if (isset($val['Inscricao']['created'])) {
+	            $results[$key]['Inscricao']['created'] = $this->dateFormatAfterFind($val['Inscricao']['created']);
+	            $results[$key]['Inscricao']['data_pagamento'] = $this->dateFormatAfterFind($val['Inscricao']['data_pagamento']);
+	        }
+	    }
+	    return $results;
+	}
+	public function beforeSave($options = array()){			
+		if (isset($val['Inscricao']['data_pagamento'])) {	
+			$this->data[$this->alias]['data_pagamento'] = $this->dateFormatBeforeFind($this->data[$this->alias]['data_pagamento']);        
+		}			
+		$this->data[$this->alias]['created'] = $this->dateFormatBeforeFind($this->data[$this->alias]['created']);        
+	}
 }

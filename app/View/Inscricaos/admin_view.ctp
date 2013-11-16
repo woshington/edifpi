@@ -1,11 +1,6 @@
 <div class="inscricaos view">
 <h2><?php echo __('Inscricao'); ?></h2>
 	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($inscricao['Inscricao']['id']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Data Inscricao'); ?></dt>
 		<dd>
 			<?php echo h($inscricao['Inscricao']['created']); ?>
@@ -35,9 +30,19 @@
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
-		<ul>
+	<ul>
+		<?php if(!$inscricao['Inscricao']['status']):?>
 			<li><?php echo $this->Html->link(__('Confirmar'), array('action' => 'confirmar', $inscricao['Inscricao']['id'], 'admin'=>1)); ?></li>
-		</ul>
+		<?php endif;?>		
+		<li>
+			<?php echo $this->Html->link(__('Editar inscricao'), array(
+				'controller'=>'inscricaos', 
+				'action' => 'edit',$inscricao['Inscricao']['id'], 'admin'=>1
+				)); 
+			?>
+		</li>
+	</ul>
+
 </div>
 <div class="related">
 	<h3><?php echo __('Related Atividades'); ?></h3>

@@ -4,12 +4,13 @@
 		font-size: 20pt;
 	}
 </style>
-<?php echo $this->Html->script('views/inscricao/listar_atividades.js'); ?>
+<?php echo $this->Html->script('views/inscricao/admin_listar_atividades.js'); ?>
 <div class="inscricaos form">
 <?php echo $this->Form->create('Inscricao'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Inscricao'); ?></legend>
+		<legend><?php echo __('Edit Inscricao'); ?></legend>
 	<?php		
+		echo $this->Form->input('id');
 		echo $this->Form->input('tipo_participacao_id', array(
 			'id'=>'tipoParticipacao',
 			'empty'=>'---- Selecione um tipo de participacao ----'

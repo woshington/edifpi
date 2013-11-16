@@ -1,7 +1,7 @@
 $(document).ready(function() {
     
     if($('#tipoParticipacao').val().length != 0) {
-        $.getJSON("listar_atividades_json",{
+        $.getJSON("../listar_atividades_json",{
             tipoParticipacaoId: $('#tipoParticipacao').val()
         }, function(atividades) {            
             if(atividades != null)                

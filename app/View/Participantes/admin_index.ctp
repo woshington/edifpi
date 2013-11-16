@@ -1,31 +1,27 @@
+
 <div class="participantes index">
 	<h2><?php echo __('Participantes'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('idParticipante'); ?></th>
 			<th><?php echo $this->Paginator->sort('nome'); ?></th>
 			<th><?php echo $this->Paginator->sort('cpf'); ?></th>
 			<th><?php echo $this->Paginator->sort('nascimento'); ?></th>
-			<th><?php echo $this->Paginator->sort('email'); ?></th>
-			<th><?php echo $this->Paginator->sort('senha'); ?></th>
+			<th><?php echo $this->Paginator->sort('email'); ?></th>			
 			<th><?php echo $this->Paginator->sort('instituicao_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($participantes as $participante): ?>
 	<tr>
-		<td><?php echo h($participante['Participante']['idParticipante']); ?>&nbsp;</td>
 		<td><?php echo h($participante['Participante']['nome']); ?>&nbsp;</td>
 		<td><?php echo h($participante['Participante']['cpf']); ?>&nbsp;</td>
 		<td><?php echo h($participante['Participante']['nascimento']); ?>&nbsp;</td>
 		<td><?php echo h($participante['Participante']['email']); ?>&nbsp;</td>
-		<td><?php echo h($participante['Participante']['senha']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($participante['Instituicao']['sigla'], array('controller' => 'instituicaos', 'action' => 'view', $participante['Instituicao']['idInstituicao'])); ?>
+			<?php echo $participante['Instituicao']['sigla'];?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $participante['Participante']['idParticipante'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $participante['Participante']['idParticipante'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $participante['Participante']['idParticipante']), null, __('Are you sure you want to delete # %s?', $participante['Participante']['idParticipante'])); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $participante['Participante']['id'])); ?>
+			
 		</td>
 	</tr>
 <?php endforeach; ?>

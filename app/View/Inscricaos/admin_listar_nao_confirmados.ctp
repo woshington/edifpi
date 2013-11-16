@@ -5,6 +5,7 @@
 			<th><?php echo $this->Paginator->sort('data_inscricao'); ?></th>
 			<th><?php echo $this->Paginator->sort('tipo_participacao_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('participante'); ?></th>
+			<th><?php echo $this->Paginator->sort('valor'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($inscricaos as $inscricao): ?>
@@ -12,9 +13,11 @@
 		<td><?php echo h($inscricao['Inscricao']['created']); ?>&nbsp;</td>
 		<td><?php echo h($inscricao['TipoParticipacao']['descricao']); ?>&nbsp;</td>
 		<td><?php echo h($inscricao['Participante']['nome']); ?>&nbsp;</td>
+		<td><?php echo h($inscricao['TipoParticipacao']['valor']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $inscricao['Inscricao']['id'])); ?>
-			<?php echo $this->Html->link(__('Confirmar'), array('action' => 'confirmar', $inscricao['Inscricao']['id'], 'admin'=>1)); ?>
+			<?php echo $this->Form->postLink(__('Confirmar'), array('action' => 'confirmar', $inscricao['Inscricao']['id'], 'admin'=>1), null, __('Confirmar inscricao de # %s?', $inscricao['Participante']['nome'])); ?>
+			
 		</td>
 	</tr>
 <?php endforeach; ?>

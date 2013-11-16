@@ -38,18 +38,20 @@ class Participante extends AppModel {
 				//'allowEmpty' => false,
 				'required' => true,
 				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				
 			),
 		),
 		'email' => array(
 			'email' => array(			
 				'rule' => array ('email'),
 				'message' => 'Informe um e-mail valido',
-				'required'=>true
+				'required'=>true,
+				'on'=>'create',
 			),
 			'unique' => array(
 				'rule'=>array('isUnique'),
-				'message' => 'Email ja esta em uso',				
+				'message' => 'Email ja esta em uso',
+
 			)
 		),
 		'senha' => array(
@@ -59,14 +61,15 @@ class Participante extends AppModel {
                 //'allowEmpty' => false,
                 //'required' => false,
                 //'last' => false, // Stop validation after this rule
-                //'on' => 'create', // Limit validation to 'create' or 'update' operations
+                'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),            
         ),
         'confirmacaoSenha' => array(
     		'notEmpty' => array(
     			'rule' => 'notEmpty',
     			'required' => true,
-    			'message' => 'Confirme sua senha.'
+    			'message' => 'Confirme sua senha.',
+    			'on' => 'create', // Limit validation to 'create' or 'update' operations
     		),
     		'confirmacaoSenha' => array(
     			'rule' => array('confirmacaoSenha'),
@@ -74,7 +77,7 @@ class Participante extends AppModel {
     			'allowEmpty' => false,
     			'required' => true,
     			//'last' => false, // Stop validation after this rule
-    			//'on' => 'create', // Limit validation to 'create' or 'update' operations
+    			'on' => 'create', // Limit validation to 'create' or 'update' operations
     			),
     		),
 	);
@@ -95,8 +98,18 @@ class Participante extends AppModel {
 		if (isset($this->data[$this->alias]['senha'])) {
             $this->data[$this->alias]['senha'] = AuthComponent::password($this->data[$this->alias]['senha']);
         }
-        $this->data[$this->alias]['nascimento'] = $this->dateFormatBeforeFind($this->data[$this->alias]['nascimento']);        
+        if (isset($this->data[$this->alias]['nascimento'])) {
+        	$this->data[$this->alias]['nascimento'] = $this->dateFormatBeforeFind($this->data[$this->alias]['nascimento']);        
+        }
         return true;
+	}
+	public function afterFind($results, $primary = false) {
+	    foreach ($results as $key => $val) {
+	        if (isset($val['Participante']['nascimento'])) {
+	            $results[$key]['Participante']['nascimento'] = $this->dateFormatAfterFind($val['Participante']['nascimento']);	            
+	        }
+	    }
+	    return $results;
 	}
 	public function confirmacaoSenha($confirmacaoSenha){
     	$password = $this->data['Participante']['senha']; 

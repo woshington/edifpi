@@ -2,15 +2,14 @@
 App::uses('AppController', 'Controller');
 
 class ParticipantesController extends AppController {
+	public $uses = array('Participante', 'Inscricao');
 	public $components = array('Paginator');
 	public function beforeFilter(){
 		parent::beforeFilter();
-		$this->Auth->allow('add','loginAutomatico');
+		$this->Auth->allow('add','loginAutomatico','esqueci');
 	}
-	public function view($id = null) {
-		if (!$this->Participante->exists($id)) {
-			throw new NotFoundException(__('Invalid participante'));
-		}
+	public function view() {
+		$id = $this->Session->read('Auth.User.id');
 		$options = array('conditions' => array('Participante.' . $this->Participante->primaryKey => $id));
 		$this->set('participante', $this->Participante->find('first', $options));
 	}
@@ -30,14 +29,15 @@ class ParticipantesController extends AppController {
 		$this->set(compact('instituicaos'));
 	}
 
-	public function edit($id = null) {
+	public function edit() {
+		$id = $this->Session->read('Auth.User.id');
 		if (!$this->Participante->exists($id)) {
 			throw new NotFoundException(__('Invalid participante'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Participante->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller'=>'inscricaos', 'action' => 'index','admin'=>0));
 			} else {
 				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'));
 			}
@@ -111,6 +111,21 @@ class ParticipantesController extends AppController {
             }
         }
     }
+    public function esqueci(){
+    	if($this->request->is('post')){
+    		$usuario = $this->Participante->find('first',array(
+    			'conditions'=>array(
+    				'Participante.email'=>$this->request->data['Participante']['email'],
+    				'Participante.cpf'=>$this->request->data['Participante']['cpf'],
+				)
+    		));    		
+    		if(count($usuario)>0){
+    			$this->loginAutomatico($usuario['Participante']['id']);
+    		}else{
+    			$this->Session->setFlash('O nome de usuário ou o cpf estão errados. Tente novamente.');
+    		}
+    	}
+    }
     public function loginAutomatico($idParticipante){
     	if(!$this->Session->read('Auth.User')){
     		if(!is_null($idParticipante)){
@@ -124,5 +139,14 @@ class ParticipantesController extends AppController {
     }
     public function logout(){
     	return $this->redirect($this->Auth->logout());
+    }
+    public function admin_Confirmados(){
+		$this->Inscricao->recursive = 0;
+		$this->paginate = array(
+			'conditions'=>array(
+				'Inscricao.status'=>true
+			)
+		);
+		$this->set('inscricaos', $this->Paginator->paginate('Inscricao'));
     }
 }

@@ -9,7 +9,7 @@ class Atividade extends AppModel {
 	public $displayField = 'descricao';
 
 	public $validate = array(
-		'idatividade' => array(
+		'id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',

@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Edit Instituicao'); ?></legend>
 	<?php
-		echo $this->Form->input('idInstituicao');
+		echo $this->Form->input('id');
 		echo $this->Form->input('nome');
 		echo $this->Form->input('sigla');
 	?>

@@ -28,13 +28,16 @@
 		</dd>
 		<dt><?php echo __('Tipo Participacao'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($inscricao['TipoParticipacao']['descricao'], array('controller' => 'tipo_participacaos', 'action' => 'view', $inscricao['TipoParticipacao']['id'])); ?>
+			<?=$inscricao['TipoParticipacao']['descricao']?>
 			&nbsp;
 		</dd>
 	</dl>
 </div>
 <div class="actions">
-	
+	<ul>
+		<li><?php echo $this->Html->link(__('Inicio'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Edit'), array('action' => 'edit')); ?></li>
+	</ul>
 </div>
 <div class="related">
 	<h3><?php echo __('Related Atividades'); ?></h3>

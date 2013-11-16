@@ -1,15 +1,28 @@
+<style type="text/css">
+	#agrupados {
+		font-weight: bold;
+		font-size: 20pt;
+	}
+</style>
+<?php echo $this->Html->script('views/inscricao/listar_atividades.js'); ?>
 <div class="inscricaos form">
 <?php echo $this->Form->create('Inscricao'); ?>
 	<fieldset>
 		<legend><?php echo __('Edit Inscricao'); ?></legend>
-	<?php
+	<?php		
 		echo $this->Form->input('id');
-		echo $this->Form->input('tipo_participacao_id');
-		echo $this->Form->input('Atividade');
+		echo $this->Form->input('tipo_participacao_id', array(
+			'id'=>'tipoParticipacao',
+			'empty'=>'---- Selecione um tipo de participacao ----'
+		));				
+		echo $this->Form->input('Atividade', array(
+			'type'=>'select', 			
+			'id'=>'atividades',
+		));
 	?>
+	<ul id='agrupados'></ul>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Salvar')); ?>
 </div>
-<div class="actions">
-	
+<div class="actions">	
 </div>

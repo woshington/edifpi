@@ -1,22 +1,24 @@
 <div class="inscricaos index">
-	<h2><?php echo __('Inscricaos'); ?></h2>
+	<h2><?php echo __('Inscricaos confirmadas'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('data_inscricao'); ?></th>
-			<th><?php echo $this->Paginator->sort('status'); ?></th>			
 			<th><?php echo $this->Paginator->sort('tipo_participacao_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('participante'); ?></th>
+			<th><?php echo $this->Paginator->sort('pagamento'); ?></th>
+			<th><?php echo $this->Paginator->sort('valor'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($inscricaos as $inscricao): ?>
 	<tr>
-		<td><?php echo h($inscricao['Inscricao']['id']); ?>&nbsp;</td>
 		<td><?php echo h($inscricao['Inscricao']['created']); ?>&nbsp;</td>
-		<td><?php echo h($inscricao['Inscricao']['status']==true ? 'Confirmado': 'Não Confirmado'); ?>&nbsp;</td>
 		<td><?php echo h($inscricao['TipoParticipacao']['descricao']); ?>&nbsp;</td>
+		<td><?php echo h($inscricao['Participante']['nome']); ?>&nbsp;</td>
+		<td><?php echo h($inscricao['Inscricao']['data_pagamento']); ?>&nbsp;</td>
+		<td><?php echo h($inscricao['TipoParticipacao']['valor']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit')); ?>			
+			<?php echo $this->Html->link(__('View'), array('controller'=>'inscricaos', 'action' => 'view', $inscricao['Inscricao']['id'])); ?>			
+			<?php echo $this->Form->postLink(__('Extornar'), array('controller'=>'inscricaos', 'action' => 'extornar', $inscricao['Inscricao']['id'], 'admin'=>1), null, __('Extornar inscricao de # %s?', $inscricao['Participante']['nome'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -36,11 +38,5 @@
 	</div>
 </div>
 <div class="actions">
-	<ul>
-		<?php if(!$inscricaos):?>
-			<h3><?php echo __('Actions'); ?></h3>
-			<li><?php echo $this->Html->link(__('Inscrever-se'), array('action' => 'add', 'admin'=>0)); ?></li>
-		<?php endif;?>
-		
-	</ul>
+
 </div>

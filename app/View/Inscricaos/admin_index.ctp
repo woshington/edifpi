@@ -6,6 +6,7 @@
 			<th><?php echo $this->Paginator->sort('data_inscricao'); ?></th>
 			<th><?php echo $this->Paginator->sort('status'); ?></th>			
 			<th><?php echo $this->Paginator->sort('tipo_participacao_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('participante'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($inscricaos as $inscricao): ?>
@@ -14,9 +15,10 @@
 		<td><?php echo h($inscricao['Inscricao']['created']); ?>&nbsp;</td>
 		<td><?php echo h($inscricao['Inscricao']['status']==true ? 'Confirmado': 'Não Confirmado'); ?>&nbsp;</td>
 		<td><?php echo h($inscricao['TipoParticipacao']['descricao']); ?>&nbsp;</td>
+		<td><?php echo h($inscricao['Participante']['nome']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit')); ?>			
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $inscricao['Inscricao']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $inscricao['Inscricao']['id'])); ?>			
 		</td>
 	</tr>
 <?php endforeach; ?>
