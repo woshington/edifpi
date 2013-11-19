@@ -20,6 +20,7 @@
 		'action'=>'semInscricao',
 		'admin'=>1
 	))."&nbsp;&nbsp;";
+	echo "<br />";
 	echo $this->Html->link(__('Nova Instituicao'), array(
 		'controller'=>'Instituicaos',
 		'action'=>'add',
@@ -29,8 +30,7 @@
 		'controller'=>'tipoParticipantes',
 		'action'=>'add',
 		'admin'=>1
-	))."&nbsp;&nbsp;";	
-	echo "<br />";	
+	))."&nbsp;&nbsp;";			
 	echo $this->Html->link(__('listar tipos de participante'), array(
 		'controller'=>'tipoParticipantes',
 		'action'=>'index',
@@ -51,12 +51,12 @@
 		'action'=>'index',
 		'admin'=>1
 	))."&nbsp;&nbsp;";	
+	echo "<br />";
 	echo $this->Html->link(__('Novo tipo de atividade'), array(
 		'controller'=>'tipoAtividades',
 		'action'=>'add',
 		'admin'=>1
-	))."&nbsp;&nbsp;";	
-	echo "<br />";
+	))."&nbsp;&nbsp;";		
 	echo $this->Html->link(__('listar atividades'), array(
 		'controller'=>'atividades',
 		'action'=>'index',

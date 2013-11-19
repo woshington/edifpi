@@ -90,11 +90,14 @@ class Inscricao extends AppModel {
 	    return $results;
 	}
 	public function beforeSave($options = array()){			
-		if (isset($val['Inscricao']['data_pagamento'])) {	
-			$this->data[$this->alias]['data_pagamento'] = $this->dateFormatBeforeFind($this->data[$this->alias]['data_pagamento']);        
+		if (!empty($this->data['Inscricao']['data_pagamento'])) {
+			$this->data[$this->alias]['data_pagamento'] = $this->dateFormatBeforeSave($this->data[$this->alias]['data_pagamento']);        
 		}
-		if (isset($val['Inscricao']['created'])) {	
-			$this->data[$this->alias]['created'] = $this->dateFormatBeforeFind($this->data[$this->alias]['created']);        
-		}		
-	}
+		
+	 	if (!empty($this->data['Inscricao']['created'])) {
+        	$this->data['Inscricao']['created'] = $this->dateFormatBeforeSave($this->data['Inscricao']['created']);
+        
+	    }
+    	return true;
+	}	
 }

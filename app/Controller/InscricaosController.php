@@ -160,9 +160,13 @@ class InscricaosController extends AppController {
 	}
     public function admin_listarNaoConfirmados(){
     	$this->Inscricao->recursive = 0;
+    	$condicao = array('Inscricao.status'=>false);    	
+    	if($this->request->is('post')){
+    		$condicao['Participante.cpf'] = $this->request->data['Participante']['cpf'];
+    	}
     	$this->paginate =  array(
     		'conditions'=>array(
-    			'Inscricao.status'=>false
+    			$condicao
     		)
     	);    	
     	$this->set("inscricaos", $this->Paginator->paginate());

@@ -1,4 +1,11 @@
 <div class="inscricaos index">
+	<?php echo $this->Form->create('Participante'); ?>
+		<fieldset>
+			<legend></legend>
+			<input type="text" name="data[Participante][cpf]" placeholder="CPF" required/>
+			<input type="submit" value="Filtrar" />
+		</fieldset>
+		
 	<h2><?php echo __('Inscricaos nao confirmadas'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
