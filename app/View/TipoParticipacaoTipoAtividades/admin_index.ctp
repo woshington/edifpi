@@ -18,8 +18,7 @@
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $tipoParticipacaoTipoAtividade['TipoParticipacaoTipoAtividade']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $tipoParticipacaoTipoAtividade['TipoParticipacaoTipoAtividade']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $tipoParticipacaoTipoAtividade['TipoParticipacaoTipoAtividade']['id']), null, __('Are you sure you want to delete # %s?', $tipoParticipacaoTipoAtividade['TipoParticipacaoTipoAtividade']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $tipoParticipacaoTipoAtividade['TipoParticipacaoTipoAtividade']['id'])); ?>	
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -39,12 +38,5 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Tipo Participacao Tipo Atividade'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Tipo Atividades'), array('controller' => 'tipo_atividades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tipo Atividade'), array('controller' => 'tipo_atividades', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Tipo Participacaos'), array('controller' => 'tipo_participacaos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tipo Participacao'), array('controller' => 'tipo_participacaos', 'action' => 'add')); ?> </li>
-	</ul>
+	
 </div>
