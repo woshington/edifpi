@@ -65,11 +65,13 @@ class ParticipantesController extends AppController {
 
 	public function admin_add() {
 		if ($this->request->is('post')) {
-			$this->Participante->create();
-			//$this->request->data['Participante']['nascimento'] = $this->formatDataList($this->request->data['Participante']['nascimento']);
+			$this->Participante->create();			
 			if ($this->Participante->save($this->request->data)) {
 				$this->Session->setFlash(__('The participante has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				if(!$this->Participante->admin){
+					return $this->redirect(array('controller'=>'inscricaos', 'action' => 'add','admin'=>1, $this->Participante->id));
+				}
+				
 			} else {
 				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'));
 			}
@@ -148,5 +150,22 @@ class ParticipantesController extends AppController {
 			)
 		);
 		$this->set('inscricaos', $this->Paginator->paginate('Inscricao'));
+    }
+    public function admin_semInscricao(){
+    	$this->Participante->recursive = 1;
+    	$this->paginate = array(
+    		'joins'=>array(
+    			array(
+    				'table'=>'inscricao',
+    				'alias'=>'Inscricao',
+    				'type'=>'left outer',
+    				'conditions'=> array('Participante.id = Inscricao.participante_id')    			
+				),
+    		),
+    		'conditions'=>array(
+    			'Inscricao.id'=>null
+    		),
+    	);    	
+		$this->set('participantes', $this->Paginator->paginate());		
     }
 }

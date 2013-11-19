@@ -88,7 +88,7 @@ class Participante extends AppModel {
 			'className' => 'Instituicao',
 			'foreignKey' => 'instituicao_id',	
 		)
-	);
+	);	
 
 	public function beforeValidate($options = array()){
 		// Retirando pontos e traços do cpf

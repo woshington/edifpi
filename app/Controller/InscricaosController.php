@@ -27,8 +27,7 @@ class InscricaosController extends AppController {
 		$this->set('inscricao', $inscricao);
 	}
 
-	public function add() {		
-		//pr($agrupados);
+	public function add() {				
 		if ($this->request->is('post')) {
 			$this->Inscricao->create();
 			$atividades = $this->Atividade->getAtividades($this->request->data['Inscricao']['tipo_participacao_id']);
@@ -64,8 +63,7 @@ class InscricaosController extends AppController {
 
 	public function edit() {
 		$id = $this->Inscricao->findByParticipanteId($this->Session->read('Auth.User.id'));
-		if ($this->request->is(array('post', 'put')))  {
-			$this->Inscricao->create();
+		if ($this->request->is(array('post', 'put')))  {			
 			$atividades = $this->Atividade->getAtividades($this->request->data['Inscricao']['tipo_participacao_id']);
 			$agrupados = array();
 			if(isset($atividades['agrupados'])){
@@ -85,9 +83,10 @@ class InscricaosController extends AppController {
 			foreach ($this->request->data['Atividade'] as $key=>$atividade) {
 				array_push($this->request->data['Atividade']['Atividade'], $atividade);
 			}
+
 			if ($this->Inscricao->save($this->request->data)) {			
 				$this->Session->setFlash(__('The inscricao has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				//return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The inscricao could not be saved. Please, try again.'));
 			}
@@ -117,14 +116,47 @@ class InscricaosController extends AppController {
     public function admin_listar_atividades_json() {
         $this->layout = false;
         if ($this->RequestHandler->isAjax()) {
-            $this->set('atividades', $this->Atividade->getAtividades($this->params['url']['tipoParticipacaoId']));
-            //$this->render('listar_atividades_json');
+            $this->set('atividades', $this->Atividade->getAtividades($this->params['url']['tipoParticipacaoId']));            
         }
     }
     public function admin_view($idInscricao) {		
     	
 		$options = array('conditions' => array('Inscricao.' . $this->Inscricao->primaryKey => $idInscricao));
 		$this->set('inscricao', $this->Inscricao->find('first', $options));
+	}
+
+	public function admin_add($participanteId = null){
+		$participanteId = 38;
+		if ($this->request->is('post')) {
+			$this->Inscricao->create();
+			$atividades = $this->Atividade->getAtividades($this->request->data['Inscricao']['tipo_participacao_id']);
+			$agrupados = array();
+			if(isset($atividades['agrupados'])){
+				$agrupados = $atividades['agrupados'];
+				unset($atividades['agrupados']);
+			}
+			$this->request->data['Inscricao']['participante_id'] = $participanteId;			
+			// Setando para array
+			settype($this->request->data['Atividade']['Atividade'], 'array');
+
+			// Incluindo agrupados
+			foreach ($agrupados as $TipoParticipacao=>$atividade) {
+				foreach($atividade as $id=>$valor){
+					array_push($this->request->data['Atividade']['Atividade'], $id);
+				}
+			}
+			foreach ($this->request->data['Atividade'] as $key=>$atividade) {
+				array_push($this->request->data['Atividade']['Atividade'], $atividade);
+			}			
+			if ($this->Inscricao->save($this->request->data)) {			
+				$this->Session->setFlash(__('The inscricao has been saved.'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The inscricao could not be saved. Please, try again.'));
+			}
+		}		 
+		$tipoParticipacaos = $this->Inscricao->TipoParticipacao->getLista();		
+		$this->set(compact('tipoParticipacaos'));
 	}
     public function admin_listarNaoConfirmados(){
     	$this->Inscricao->recursive = 0;
@@ -164,17 +196,16 @@ class InscricaosController extends AppController {
     			Router::url(array('controller'=>'participantes','action'=>'confirmados','admin'=>1))."'</script>";
     	}    	
     }    
-    public function admin_edit($id = null) {
-    	$id = $this->Inscricao->findById($id);
-    	if ($this->request->is(array('post', 'put')))  {
-			$this->Inscricao->create();
+    public function admin_edit($idInscricao = null) {
+    	$idI = $this->Inscricao->findById($idInscricao);
+		if ($this->request->is(array('post', 'put')))  {			
 			$atividades = $this->Atividade->getAtividades($this->request->data['Inscricao']['tipo_participacao_id']);
 			$agrupados = array();
 			if(isset($atividades['agrupados'])){
 				$agrupados = $atividades['agrupados'];
 				unset($atividades['agrupados']);
 			}
-			$this->request->data['Inscricao']['participante_id'] = $id['Participante']['id'];
+			$this->request->data['Inscricao']['participante_id'] = $idI['Participante']['id'];
 			// Setando para array
 			settype($this->request->data['Atividade']['Atividade'], 'array');
 
@@ -193,11 +224,12 @@ class InscricaosController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The inscricao could not be saved. Please, try again.'));
 			}
-		}elseif(count($id)<=0) {
+		}elseif(count($idI)<=0) {
 			$this->Session->setFlash(__('Participante não tem inscrição valida.'));
-			return $this->redirect(array('controller'=>'participantes', 'action' => 'confirmados'));
-		}else {			
-			$this->request->data = $id;			
+			return $this->redirect(array('action' => 'index'));
+		}else {
+			$options = array('conditions' => array('Inscricao.' . $this->Inscricao->primaryKey => $idI['Inscricao']['id']));
+			$this->request->data = $this->Inscricao->find('first', $options);
 		}		
 		$tipoParticipacaos = $this->Inscricao->TipoParticipacao->getLista();		
 		$this->set(compact('tipoParticipacaos'));

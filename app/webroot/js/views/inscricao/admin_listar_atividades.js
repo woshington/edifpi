@@ -1,17 +1,16 @@
 $(document).ready(function() {
-    
-    if($('#tipoParticipacao').val().length != 0) {
+    if($('#tipoParticipacao').val().length != 0) {        
         $.getJSON("../listar_atividades_json",{
             tipoParticipacaoId: $('#tipoParticipacao').val()
-        }, function(atividades) {            
+        }, function(atividades) {                        
             if(atividades != null)                
                 popularListaDeAtividades(atividades, $('#id-Atividade').val());
         });
     }    
-    $('#tipoParticipacao').change(function() {        
-        if($(this).val().length != 0) {            
-            $.getJSON("listar_atividades_json",{
-                tipoParticipacaoId: $(this).val()
+    $('#tipoParticipacao').change(function() {            
+        if($(this).val().length != 0) {
+            $.getJSON("../listar_atividades_json",{
+                tipoParticipacaoId: $(this).val()                
             }, function(atividades) {
                 if(atividades != null)
                     popularListaDeAtividades(atividades);

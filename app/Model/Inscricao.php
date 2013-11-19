@@ -9,16 +9,6 @@ class Inscricao extends AppModel {
 	public $primaryKey = 'id';
 
 	public $validate = array(
-		'id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'data_inscricao' => array(
 			'date' => array(
 				'rule' => array('date'),
@@ -102,7 +92,9 @@ class Inscricao extends AppModel {
 	public function beforeSave($options = array()){			
 		if (isset($val['Inscricao']['data_pagamento'])) {	
 			$this->data[$this->alias]['data_pagamento'] = $this->dateFormatBeforeFind($this->data[$this->alias]['data_pagamento']);        
-		}			
-		$this->data[$this->alias]['created'] = $this->dateFormatBeforeFind($this->data[$this->alias]['created']);        
+		}
+		if (isset($val['Inscricao']['created'])) {	
+			$this->data[$this->alias]['created'] = $this->dateFormatBeforeFind($this->data[$this->alias]['created']);        
+		}		
 	}
 }

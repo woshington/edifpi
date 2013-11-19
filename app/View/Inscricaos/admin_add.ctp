@@ -9,8 +9,7 @@
 <?php echo $this->Form->create('Inscricao'); ?>
 	<fieldset>
 		<legend><?php echo __('Admin add Inscricao'); ?></legend>
-	<?php
-		echo $this->Form->input('id');								
+	<?php		
 		echo $this->Form->input('tipo_participacao_id', array(
 			'id'=>'tipoParticipacao',
 			'empty'=>'---- Selecione um tipo de participacao ----'
