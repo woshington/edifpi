@@ -1,0 +1,954 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2013-11-20 20:38-0300\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/AtividadesController.php:15;37
+msgid "Invalid atividade"
+msgstr ""
+
+#: Controller/AtividadesController.php:25;41
+msgid "The atividade has been saved."
+msgstr ""
+
+#: Controller/AtividadesController.php:28;44
+msgid "The atividade could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/InscricaoAtividadesController.php:37;72;100;130;165;193
+msgid "Invalid inscricao atividade"
+msgstr ""
+
+#: Controller/InscricaoAtividadesController.php:52;76;145;169
+msgid "The inscricao atividade has been saved."
+msgstr ""
+
+#: Controller/InscricaoAtividadesController.php:55;79;148;172
+msgid "The inscricao atividade could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/InscricaoAtividadesController.php:104;197
+msgid "The inscricao atividade has been deleted."
+msgstr ""
+
+#: Controller/InscricaoAtividadesController.php:106;199
+msgid "The inscricao atividade could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/InscricaosController.php:25
+msgid "Inscrição invalida para esse participante"
+msgstr ""
+
+#: Controller/InscricaosController.php:53;88;152;226
+msgid "The inscricao has been saved."
+msgstr ""
+
+#: Controller/InscricaosController.php:56;91;155;229
+msgid "The inscricao could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/InscricaosController.php:94;232
+msgid "Participante não tem inscrição valida."
+msgstr ""
+
+#: Controller/InstituicaosController.php:14;35
+msgid "Invalid instituicao"
+msgstr ""
+
+#: Controller/InstituicaosController.php:25;39
+msgid "The instituicao has been saved."
+msgstr ""
+
+#: Controller/InstituicaosController.php:28;42
+msgid "The instituicao could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ParticipantesController.php:22;39;70;90
+msgid "The participante has been saved."
+msgstr ""
+
+#: Controller/ParticipantesController.php:25;42;76;93
+msgid "The participante could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ParticipantesController.php:35;60;86
+msgid "Invalid participante"
+msgstr ""
+
+#: Controller/TipoAtividadesController.php:16;36
+msgid "Invalid tipo atividade"
+msgstr ""
+
+#: Controller/TipoAtividadesController.php:26;40
+msgid "The tipo atividade has been saved."
+msgstr ""
+
+#: Controller/TipoAtividadesController.php:29;43
+msgid "The tipo atividade could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TipoParticipacaoTipoAtividadesController.php:14;37
+msgid "Invalid tipo participacao tipo atividade"
+msgstr ""
+
+#: Controller/TipoParticipacaoTipoAtividadesController.php:24;41
+msgid "The tipo participacao tipo atividade has been saved."
+msgstr ""
+
+#: Controller/TipoParticipacaoTipoAtividadesController.php:27;44
+msgid "The tipo participacao tipo atividade could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TipoParticipacaosController.php:14;38
+msgid "Invalid tipo participacao"
+msgstr ""
+
+#: Controller/TipoParticipacaosController.php:26;42
+msgid "The tipo participacao has been saved."
+msgstr ""
+
+#: Controller/TipoParticipacaosController.php:29;45
+msgid "The tipo participacao could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TipoParticipantesController.php:12;32
+msgid "Invalid tipo participante"
+msgstr ""
+
+#: Controller/TipoParticipantesController.php:22;36
+msgid "The tipo participante has been saved."
+msgstr ""
+
+#: Controller/TipoParticipantesController.php:25;39
+msgid "The tipo participante could not be saved. Please, try again."
+msgstr ""
+
+#: View/Atividades/admin_add.ctp:4
+msgid "Admin Add Atividade"
+msgstr ""
+
+#: View/Atividades/admin_add.ctp:11
+#: View/Atividades/admin_edit.ctp:12
+#: View/InscricaoAtividades/add.ctp:10
+#: View/InscricaoAtividades/admin_add.ctp:10
+#: View/InscricaoAtividades/admin_edit.ctp:11
+#: View/InscricaoAtividades/edit.ctp:11
+#: View/Instituicaos/admin_add.ctp:10
+#: View/Instituicaos/admin_edit.ctp:11
+#: View/Participantes/add.ctp:21
+#: View/Participantes/admin_add.ctp:23
+#: View/Participantes/admin_edit.ctp:19
+#: View/Participantes/edit.ctp:19
+#: View/TipoAtividades/admin_add.ctp:10
+#: View/TipoAtividades/admin_edit.ctp:11
+#: View/TipoParticipacaoTipoAtividades/admin_add.ctp:10
+#: View/TipoParticipacaoTipoAtividades/admin_edit.ctp:11
+#: View/TipoParticipacaos/admin_add.ctp:18
+#: View/TipoParticipacaos/admin_edit.ctp:14
+#: View/TipoParticipantes/admin_add.ctp:9
+#: View/TipoParticipantes/admin_edit.ctp:10
+msgid "Submit"
+msgstr ""
+
+#: View/Atividades/admin_add.ctp:14
+#: View/Atividades/admin_index.ctp:9
+#: View/Atividades/admin_view.ctp:27
+#: View/InscricaoAtividades/add.ctp:13
+#: View/InscricaoAtividades/admin_add.ctp:13
+#: View/InscricaoAtividades/admin_edit.ctp:14
+#: View/InscricaoAtividades/admin_index.ctp:8;42
+#: View/InscricaoAtividades/admin_view.ctp:22
+#: View/InscricaoAtividades/edit.ctp:14
+#: View/InscricaoAtividades/index.ctp:8;42
+#: View/InscricaoAtividades/view.ctp:22
+#: View/Inscricaos/admin_index.ctp:10;43
+#: View/Inscricaos/admin_listar_nao_confirmados.ctp:16
+#: View/Inscricaos/admin_view.ctp:32
+#: View/Inscricaos/index.ctp:9;41
+#: View/Instituicaos/admin_add.ctp:13
+#: View/Instituicaos/admin_edit.ctp:14
+#: View/Instituicaos/admin_index.ctp:7;36
+#: View/Instituicaos/admin_view.ctp:17;35
+#: View/Participantes/admin_add.ctp:26
+#: View/Participantes/admin_confirmados.ctp:10
+#: View/Participantes/admin_edit.ctp:22
+#: View/Participantes/admin_index.ctp:11;44
+#: View/Participantes/admin_sem_inscricao.ctp:11;44
+#: View/Participantes/admin_view.ctp:32
+#: View/Participantes/edit.ctp:22
+#: View/Participantes/index.ctp:12;48
+#: View/Participantes/view.ctp:32
+#: View/TipoAtividades/admin_index.ctp:8
+#: View/TipoAtividades/admin_view.ctp:22;36
+#: View/TipoParticipacaoTipoAtividades/admin_add.ctp:13
+#: View/TipoParticipacaoTipoAtividades/admin_index.ctp:8
+#: View/TipoParticipacaoTipoAtividades/admin_view.ctp:22
+#: View/TipoParticipacaos/admin_add.ctp:21
+#: View/TipoParticipacaos/admin_index.ctp:11
+#: View/TipoParticipacaos/admin_view.ctp:37
+#: View/TipoParticipantes/admin_index.ctp:7;35
+#: View/TipoParticipantes/admin_view.ctp:17;35
+msgid "Actions"
+msgstr ""
+
+#: View/Atividades/admin_add.ctp:17
+#: View/InscricaoAtividades/add.ctp:19
+#: View/InscricaoAtividades/admin_add.ctp:19
+#: View/InscricaoAtividades/admin_edit.ctp:21
+#: View/InscricaoAtividades/admin_index.ctp:47
+#: View/InscricaoAtividades/admin_view.ctp:30
+#: View/InscricaoAtividades/edit.ctp:21
+#: View/InscricaoAtividades/index.ctp:47
+#: View/InscricaoAtividades/view.ctp:30
+msgid "List Atividades"
+msgstr ""
+
+#: View/Atividades/admin_add.ctp:18
+#: View/TipoParticipacaoTipoAtividades/admin_add.ctp:17
+msgid "List Tipo Atividades"
+msgstr ""
+
+#: View/Atividades/admin_add.ctp:19
+#: View/TipoParticipacaoTipoAtividades/admin_add.ctp:18
+msgid "New Tipo Atividade"
+msgstr ""
+
+#: View/Atividades/admin_add.ctp:20
+#: View/InscricaoAtividades/add.ctp:17
+#: View/InscricaoAtividades/admin_add.ctp:17
+#: View/InscricaoAtividades/admin_edit.ctp:19
+#: View/InscricaoAtividades/admin_index.ctp:45
+#: View/InscricaoAtividades/admin_view.ctp:28
+#: View/InscricaoAtividades/edit.ctp:19
+#: View/InscricaoAtividades/index.ctp:45
+#: View/InscricaoAtividades/view.ctp:28
+#: View/TipoParticipacaos/admin_add.ctp:27
+msgid "List Inscricaos"
+msgstr ""
+
+#: View/Atividades/admin_add.ctp:21
+#: View/InscricaoAtividades/add.ctp:18
+#: View/InscricaoAtividades/admin_add.ctp:18
+#: View/InscricaoAtividades/admin_edit.ctp:20
+#: View/InscricaoAtividades/admin_index.ctp:46
+#: View/InscricaoAtividades/admin_view.ctp:29
+#: View/InscricaoAtividades/edit.ctp:20
+#: View/InscricaoAtividades/index.ctp:46
+#: View/InscricaoAtividades/view.ctp:29
+#: View/TipoParticipacaos/admin_add.ctp:28
+msgid "New Inscricao"
+msgstr ""
+
+#: View/Atividades/admin_edit.ctp:4
+msgid "Admin Edit Atividade"
+msgstr ""
+
+#: View/Atividades/admin_index.ctp:2
+msgid "Atividades"
+msgstr ""
+
+#: View/Atividades/admin_index.ctp:20
+#: View/InscricaoAtividades/admin_index.ctp:20
+#: View/InscricaoAtividades/index.ctp:20
+#: View/Inscricaos/admin_index.ctp:20
+#: View/Inscricaos/admin_listar_nao_confirmados.ctp:25
+#: View/Inscricaos/index.ctp:18
+#: View/Instituicaos/admin_index.ctp:14
+#: View/Instituicaos/admin_view.ctp:45
+#: View/Participantes/admin_confirmados.ctp:20
+#: View/Participantes/admin_index.ctp:23
+#: View/Participantes/index.ctp:26
+#: View/TipoAtividades/admin_index.ctp:16
+#: View/TipoAtividades/admin_view.ctp:45
+#: View/TipoParticipacaoTipoAtividades/admin_index.ctp:20
+#: View/TipoParticipacaos/admin_index.ctp:24
+#: View/TipoParticipantes/admin_index.ctp:14
+#: View/TipoParticipantes/admin_view.ctp:46
+msgid "View"
+msgstr ""
+
+#: View/Atividades/admin_index.ctp:21
+#: View/InscricaoAtividades/admin_index.ctp:21
+#: View/InscricaoAtividades/index.ctp:21
+#: View/Inscricaos/admin_index.ctp:21
+#: View/Inscricaos/index.ctp:19
+#: View/Inscricaos/view.ctp:39
+#: View/Instituicaos/admin_index.ctp:15
+#: View/Instituicaos/admin_view.ctp:46
+#: View/Participantes/index.ctp:27
+#: View/TipoAtividades/admin_index.ctp:17
+#: View/TipoAtividades/admin_view.ctp:46
+#: View/TipoParticipacaoTipoAtividades/admin_index.ctp:21
+#: View/TipoParticipacaos/admin_index.ctp:25
+#: View/TipoParticipantes/admin_index.ctp:15
+#: View/TipoParticipantes/admin_view.ctp:47
+msgid "Edit"
+msgstr ""
+
+#: View/Atividades/admin_index.ctp:29
+#: View/InscricaoAtividades/admin_index.ctp:30
+#: View/InscricaoAtividades/index.ctp:30
+#: View/Inscricaos/admin_index.ctp:29
+#: View/Inscricaos/admin_listar_nao_confirmados.ctp:35
+#: View/Inscricaos/index.ctp:27
+#: View/Instituicaos/admin_index.ctp:24
+#: View/Participantes/admin_confirmados.ctp:29
+#: View/Participantes/admin_index.ctp:32
+#: View/Participantes/admin_sem_inscricao.ctp:32
+#: View/Participantes/index.ctp:36
+#: View/TipoAtividades/admin_index.ctp:25
+#: View/TipoParticipacaoTipoAtividades/admin_index.ctp:29
+#: View/TipoParticipacaos/admin_index.ctp:34
+#: View/TipoParticipantes/admin_index.ctp:23
+msgid "Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}"
+msgstr ""
+
+#: View/Atividades/admin_index.ctp:34
+#: View/InscricaoAtividades/admin_index.ctp:35
+#: View/InscricaoAtividades/index.ctp:35
+#: View/Inscricaos/admin_index.ctp:34
+#: View/Inscricaos/admin_listar_nao_confirmados.ctp:40
+#: View/Inscricaos/index.ctp:32
+#: View/Instituicaos/admin_index.ctp:29
+#: View/Participantes/admin_confirmados.ctp:34
+#: View/Participantes/admin_index.ctp:37
+#: View/Participantes/admin_sem_inscricao.ctp:37
+#: View/Participantes/index.ctp:41
+#: View/TipoAtividades/admin_index.ctp:30
+#: View/TipoParticipacaoTipoAtividades/admin_index.ctp:34
+#: View/TipoParticipacaos/admin_index.ctp:39
+#: View/TipoParticipantes/admin_index.ctp:28
+msgid "previous"
+msgstr ""
+
+#: View/Atividades/admin_index.ctp:36
+#: View/InscricaoAtividades/admin_index.ctp:37
+#: View/InscricaoAtividades/index.ctp:37
+#: View/Inscricaos/admin_index.ctp:36
+#: View/Inscricaos/admin_listar_nao_confirmados.ctp:42
+#: View/Inscricaos/index.ctp:34
+#: View/Instituicaos/admin_index.ctp:31
+#: View/Participantes/admin_confirmados.ctp:36
+#: View/Participantes/admin_index.ctp:39
+#: View/Participantes/admin_sem_inscricao.ctp:39
+#: View/Participantes/index.ctp:43
+#: View/TipoAtividades/admin_index.ctp:32
+#: View/TipoParticipacaoTipoAtividades/admin_index.ctp:36
+#: View/TipoParticipacaos/admin_index.ctp:41
+#: View/TipoParticipantes/admin_index.ctp:30
+msgid "next"
+msgstr ""
+
+#: View/Atividades/admin_view.ctp:2
+#: View/InscricaoAtividades/admin_view.ctp:14
+#: View/InscricaoAtividades/view.ctp:14
+msgid "Atividade"
+msgstr ""
+
+#: View/Atividades/admin_view.ctp:4
+#: View/Inscricaos/view.ctp:4
+#: View/Instituicaos/admin_view.ctp:30
+#: View/TipoAtividades/admin_view.ctp:4;32
+#: View/TipoParticipacaoTipoAtividades/admin_view.ctp:4
+#: View/TipoParticipacaos/admin_view.ctp:4
+#: View/TipoParticipantes/admin_view.ctp:4;29
+msgid "Id"
+msgstr ""
+
+#: View/Atividades/admin_view.ctp:9
+#: View/Inscricaos/admin_view.ctp:52
+#: View/Inscricaos/view.ctp:47
+#: View/TipoAtividades/admin_view.ctp:33
+msgid "Titulo"
+msgstr ""
+
+#: View/Atividades/admin_view.ctp:14
+#: View/Inscricaos/admin_view.ctp:53
+#: View/Inscricaos/view.ctp:48
+#: View/TipoAtividades/admin_view.ctp:9;34
+#: View/TipoParticipacaos/admin_view.ctp:9
+#: View/TipoParticipantes/admin_view.ctp:9;30
+msgid "Descricao"
+msgstr ""
+
+#: View/Atividades/admin_view.ctp:19
+#: View/TipoAtividades/admin_view.ctp:2
+#: View/TipoParticipacaoTipoAtividades/admin_view.ctp:9
+msgid "Tipo Atividade"
+msgstr ""
+
+#: View/Atividades/admin_view.ctp:29
+msgid "Edit Atividade"
+msgstr ""
+
+#: View/Elements/menu.ctp:2
+msgid "Inscrições"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:3
+msgid "Não Confirmados"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:8
+msgid "Confirmados"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:13
+msgid "Nova inscricao"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:18
+#: View/Participantes/admin_sem_inscricao.ctp:3
+msgid "Participantes sem inscricao"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:24
+msgid "Nova Instituicao"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:29
+msgid "Novo tipo de participante"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:34
+msgid "listar tipos de participante"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:39
+msgid "listar tipos de participacao"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:44
+msgid "Novo tipo de participacao"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:49
+msgid "listar tipos de atividade"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:55
+msgid "Novo tipo de atividade"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:60
+msgid "listar atividades"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:65
+msgid "Nova atividade"
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:70
+msgid "Participacao atividade (listar) "
+msgstr ""
+
+#: View/Elements/menuAdmin.ctp:75
+msgid "Participacao atividade (Nova)"
+msgstr ""
+
+#: View/InscricaoAtividades/add.ctp:4
+msgid "Add Inscricao Atividade"
+msgstr ""
+
+#: View/InscricaoAtividades/add.ctp:16
+#: View/InscricaoAtividades/admin_add.ctp:16
+#: View/InscricaoAtividades/admin_edit.ctp:18
+#: View/InscricaoAtividades/admin_view.ctp:26
+#: View/InscricaoAtividades/edit.ctp:18
+#: View/InscricaoAtividades/view.ctp:26
+msgid "List Inscricao Atividades"
+msgstr ""
+
+#: View/InscricaoAtividades/add.ctp:20
+#: View/InscricaoAtividades/admin_add.ctp:20
+#: View/InscricaoAtividades/admin_edit.ctp:22
+#: View/InscricaoAtividades/admin_index.ctp:48
+#: View/InscricaoAtividades/admin_view.ctp:31
+#: View/InscricaoAtividades/edit.ctp:22
+#: View/InscricaoAtividades/index.ctp:48
+#: View/InscricaoAtividades/view.ctp:31
+msgid "New Atividade"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_add.ctp:4
+msgid "Admin Add Inscricao Atividade"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_edit.ctp:4
+msgid "Admin Edit Inscricao Atividade"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_edit.ctp:17
+#: View/InscricaoAtividades/admin_index.ctp:22
+#: View/InscricaoAtividades/edit.ctp:17
+#: View/InscricaoAtividades/index.ctp:22
+#: View/Instituicaos/admin_edit.ctp:17
+#: View/Participantes/index.ctp:28
+msgid "Delete"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_edit.ctp:17
+#: View/InscricaoAtividades/admin_index.ctp:22
+#: View/InscricaoAtividades/admin_view.ctp:25
+#: View/InscricaoAtividades/edit.ctp:17
+#: View/InscricaoAtividades/index.ctp:22
+#: View/InscricaoAtividades/view.ctp:25
+#: View/Instituicaos/admin_edit.ctp:17
+#: View/Participantes/index.ctp:28
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_index.ctp:2
+#: View/InscricaoAtividades/index.ctp:2
+msgid "Inscricao Atividades"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_index.ctp:44
+#: View/InscricaoAtividades/admin_view.ctp:27
+#: View/InscricaoAtividades/index.ctp:44
+#: View/InscricaoAtividades/view.ctp:27
+msgid "New Inscricao Atividade"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_view.ctp:2
+#: View/InscricaoAtividades/view.ctp:2
+msgid "Inscricao Atividade"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_view.ctp:4
+#: View/InscricaoAtividades/view.ctp:4
+msgid "IdInscricaoAtividade"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_view.ctp:9
+#: View/InscricaoAtividades/view.ctp:9
+#: View/Inscricaos/admin_view.ctp:2
+#: View/Inscricaos/view.ctp:2
+msgid "Inscricao"
+msgstr "Inscrição"
+
+#: View/InscricaoAtividades/admin_view.ctp:24
+#: View/InscricaoAtividades/edit.ctp:4
+#: View/InscricaoAtividades/view.ctp:24
+msgid "Edit Inscricao Atividade"
+msgstr ""
+
+#: View/InscricaoAtividades/admin_view.ctp:25
+#: View/InscricaoAtividades/view.ctp:25
+msgid "Delete Inscricao Atividade"
+msgstr ""
+
+#: View/Inscricaos/add.ctp:11
+msgid "Add Inscricao"
+msgstr ""
+
+#: View/Inscricaos/add.ctp:24
+#: View/Inscricaos/admin_add.ctp:24
+#: View/Inscricaos/admin_edit.ctp:25
+#: View/Inscricaos/edit.ctp:25
+msgid "Salvar"
+msgstr ""
+
+#: View/Inscricaos/admin_add.ctp:11
+#: View/Inscricaos/admin_edit.ctp:11
+msgid "Admin add Inscricao"
+msgstr ""
+
+#: View/Inscricaos/admin_index.ctp:2
+#: View/Inscricaos/index.ctp:2
+msgid "Inscricaos"
+msgstr ""
+
+#: View/Inscricaos/admin_index.ctp:44
+#: View/Inscricaos/index.ctp:42
+msgid "Inscrever-se"
+msgstr ""
+
+#: View/Inscricaos/admin_listar_nao_confirmados.ctp:9
+msgid "Inscricaos nao confirmadas"
+msgstr "Inscrições não confirmadas"
+
+#: View/Inscricaos/admin_listar_nao_confirmados.ctp:26
+#: View/Inscricaos/admin_view.ctp:35
+msgid "Confirmar"
+msgstr ""
+
+#: View/Inscricaos/admin_listar_nao_confirmados.ctp:26
+msgid "Confirmar inscricao de # %s?"
+msgstr ""
+
+#: View/Inscricaos/admin_view.ctp:4
+#: View/Inscricaos/view.ctp:9
+msgid "Data Inscricao"
+msgstr ""
+
+#: View/Inscricaos/admin_view.ctp:9
+#: View/Inscricaos/view.ctp:14
+msgid "Status"
+msgstr ""
+
+#: View/Inscricaos/admin_view.ctp:14
+#: View/Inscricaos/view.ctp:19
+msgid "Data Pagamento"
+msgstr ""
+
+#: View/Inscricaos/admin_view.ctp:19
+#: View/Inscricaos/view.ctp:24
+#: View/Participantes/admin_view.ctp:2
+#: View/Participantes/view.ctp:2
+msgid "Participante"
+msgstr ""
+
+#: View/Inscricaos/admin_view.ctp:24
+#: View/Inscricaos/view.ctp:29
+#: View/TipoParticipacaoTipoAtividades/admin_view.ctp:14
+#: View/TipoParticipacaos/admin_view.ctp:2
+msgid "Tipo Participacao"
+msgstr ""
+
+#: View/Inscricaos/admin_view.ctp:38
+msgid "Editar inscricao"
+msgstr ""
+
+#: View/Inscricaos/admin_view.ctp:48
+#: View/Inscricaos/view.ctp:43
+#: View/TipoAtividades/admin_view.ctp:28
+msgid "Related Atividades"
+msgstr ""
+
+#: View/Inscricaos/edit.ctp:11
+msgid "Edit Inscricao"
+msgstr ""
+
+#: View/Inscricaos/view.ctp:38
+msgid "Inicio"
+msgstr ""
+
+#: View/Instituicaos/admin_add.ctp:4
+msgid "Add Instituicao"
+msgstr ""
+
+#: View/Instituicaos/admin_add.ctp:16
+#: View/Instituicaos/admin_edit.ctp:18
+#: View/Instituicaos/admin_view.ctp:21
+#: View/Participantes/admin_add.ctp:30
+#: View/Participantes/admin_index.ctp:47
+#: View/Participantes/admin_sem_inscricao.ctp:47
+#: View/Participantes/index.ctp:51
+msgid "List Instituicaos"
+msgstr ""
+
+#: View/Instituicaos/admin_add.ctp:17
+#: View/Instituicaos/admin_edit.ctp:19
+#: View/Instituicaos/admin_index.ctp:39
+#: View/Participantes/admin_add.ctp:29
+msgid "List Participantes"
+msgstr ""
+
+#: View/Instituicaos/admin_add.ctp:18
+#: View/Instituicaos/admin_edit.ctp:20
+#: View/Instituicaos/admin_index.ctp:40
+#: View/Participantes/admin_index.ctp:46
+#: View/Participantes/admin_sem_inscricao.ctp:46
+#: View/Participantes/index.ctp:50
+msgid "New Participante"
+msgstr ""
+
+#: View/Instituicaos/admin_edit.ctp:4
+#: View/Instituicaos/admin_view.ctp:19
+msgid "Edit Instituicao"
+msgstr ""
+
+#: View/Instituicaos/admin_index.ctp:2
+msgid "Instituicaos"
+msgstr ""
+
+#: View/Instituicaos/admin_index.ctp:38
+#: View/Instituicaos/admin_view.ctp:22
+#: View/Participantes/admin_add.ctp:31
+#: View/Participantes/admin_index.ctp:48
+#: View/Participantes/admin_sem_inscricao.ctp:48
+#: View/Participantes/index.ctp:52
+msgid "New Instituicao"
+msgstr ""
+
+#: View/Instituicaos/admin_view.ctp:2
+#: View/Participantes/admin_view.ctp:24
+#: View/Participantes/view.ctp:24
+msgid "Instituicao"
+msgstr ""
+
+#: View/Instituicaos/admin_view.ctp:4;31
+#: View/Participantes/admin_view.ctp:4
+#: View/Participantes/view.ctp:4
+msgid "Nome"
+msgstr ""
+
+#: View/Instituicaos/admin_view.ctp:9
+msgid "Sigla"
+msgstr ""
+
+#: View/Instituicaos/admin_view.ctp:26
+msgid "Related Participantes"
+msgstr ""
+
+#: View/Instituicaos/admin_view.ctp:32
+#: View/Participantes/admin_view.ctp:9
+#: View/Participantes/view.ctp:9
+msgid "Cpf"
+msgstr ""
+
+#: View/Instituicaos/admin_view.ctp:33
+#: View/Participantes/admin_view.ctp:14
+#: View/Participantes/view.ctp:14
+msgid "Nascimento"
+msgstr ""
+
+#: View/Instituicaos/admin_view.ctp:34
+msgid "Instituicao Id"
+msgstr ""
+
+#: View/Participantes/add.ctp:10
+#: View/Participantes/admin_add.ctp:10
+msgid "Add Participante"
+msgstr ""
+
+#: View/Participantes/admin_confirmados.ctp:2
+msgid "Inscricaos confirmadas"
+msgstr ""
+
+#: View/Participantes/admin_confirmados.ctp:21
+msgid "Extornar"
+msgstr ""
+
+#: View/Participantes/admin_confirmados.ctp:21
+msgid "Extornar inscricao de # %s?"
+msgstr ""
+
+#: View/Participantes/admin_edit.ctp:10
+msgid "Admin Edit Participante"
+msgstr ""
+
+#: View/Participantes/admin_index.ctp:3
+#: View/Participantes/index.ctp:2
+msgid "Participantes"
+msgstr ""
+
+#: View/Participantes/admin_sem_inscricao.ctp:23
+msgid "Inscrever"
+msgstr ""
+
+#: View/Participantes/admin_view.ctp:19
+#: View/Participantes/view.ctp:19
+msgid "Email"
+msgstr ""
+
+#: View/Participantes/admin_view.ctp:34
+#: View/Participantes/edit.ctp:10
+#: View/Participantes/view.ctp:34
+msgid "Edit Participante"
+msgstr ""
+
+#: View/TipoAtividades/admin_add.ctp:4
+msgid "Admin Add Tipo Atividade"
+msgstr ""
+
+#: View/TipoAtividades/admin_edit.ctp:4
+msgid "Admin Edit Tipo Atividade"
+msgstr ""
+
+#: View/TipoAtividades/admin_index.ctp:2
+msgid "Tipo Atividades"
+msgstr ""
+
+#: View/TipoAtividades/admin_view.ctp:14
+msgid "Agrupar"
+msgstr ""
+
+#: View/TipoAtividades/admin_view.ctp:24
+msgid "Edit Tipo Atividade"
+msgstr ""
+
+#: View/TipoAtividades/admin_view.ctp:35
+msgid "Tipo Atividade Id"
+msgstr ""
+
+#: View/TipoParticipacaoTipoAtividades/admin_add.ctp:4
+msgid "Admin Add Tipo Participacao Tipo Atividade"
+msgstr ""
+
+#: View/TipoParticipacaoTipoAtividades/admin_add.ctp:16
+msgid "List Tipo Participacao Tipo Atividades"
+msgstr ""
+
+#: View/TipoParticipacaoTipoAtividades/admin_add.ctp:19
+#: View/TipoParticipacaos/admin_add.ctp:24
+msgid "List Tipo Participacaos"
+msgstr ""
+
+#: View/TipoParticipacaoTipoAtividades/admin_add.ctp:20
+msgid "New Tipo Participacao"
+msgstr ""
+
+#: View/TipoParticipacaoTipoAtividades/admin_edit.ctp:4
+msgid "Admin Edit Tipo Participacao Tipo Atividade"
+msgstr ""
+
+#: View/TipoParticipacaoTipoAtividades/admin_index.ctp:2
+msgid "Tipo Participacao Tipo Atividades"
+msgstr ""
+
+#: View/TipoParticipacaoTipoAtividades/admin_view.ctp:2
+msgid "Tipo Participacao Tipo Atividade"
+msgstr ""
+
+#: View/TipoParticipacaoTipoAtividades/admin_view.ctp:24
+msgid "Edit Tipo Participacao Tipo Atividade"
+msgstr ""
+
+#: View/TipoParticipacaos/admin_add.ctp:9
+msgid "Add Tipo Participacao"
+msgstr ""
+
+#: View/TipoParticipacaos/admin_add.ctp:25
+#: View/TipoParticipantes/admin_view.ctp:20
+msgid "List Tipo Participantes"
+msgstr ""
+
+#: View/TipoParticipacaos/admin_add.ctp:26
+#: View/TipoParticipantes/admin_index.ctp:37
+#: View/TipoParticipantes/admin_view.ctp:21
+msgid "New Tipo Participante"
+msgstr ""
+
+#: View/TipoParticipacaos/admin_edit.ctp:4
+#: View/TipoParticipacaos/admin_view.ctp:39
+msgid "Edit Tipo Participacao"
+msgstr ""
+
+#: View/TipoParticipacaos/admin_index.ctp:2
+msgid "Tipo Participacaos"
+msgstr ""
+
+#: View/TipoParticipacaos/admin_view.ctp:14
+#: View/TipoParticipantes/admin_view.ctp:31
+msgid "Valor"
+msgstr ""
+
+#: View/TipoParticipacaos/admin_view.ctp:19
+#: View/TipoParticipantes/admin_view.ctp:32
+msgid "Inicio Inscricao"
+msgstr ""
+
+#: View/TipoParticipacaos/admin_view.ctp:24
+#: View/TipoParticipantes/admin_view.ctp:33
+msgid "Fim Inscricao"
+msgstr ""
+
+#: View/TipoParticipacaos/admin_view.ctp:29
+#: View/TipoParticipantes/admin_view.ctp:2
+msgid "Tipo Participante"
+msgstr ""
+
+#: View/TipoParticipantes/admin_add.ctp:4
+msgid "Add Tipo Participante"
+msgstr ""
+
+#: View/TipoParticipantes/admin_edit.ctp:4
+#: View/TipoParticipantes/admin_view.ctp:19
+msgid "Edit Tipo Participante"
+msgstr ""
+
+#: View/TipoParticipantes/admin_index.ctp:2
+msgid "Tipo Participantes"
+msgstr ""
+
+#: View/TipoParticipantes/admin_view.ctp:25
+msgid "Related Tipo Participacaos"
+msgstr ""
+
+#: View/TipoParticipantes/admin_view.ctp:34
+msgid "Tipo Participante Id"
+msgstr ""
+
+#: Model/Atividade.php:validation for field id;validation for field tipo_atividade_id
+#: Model/Inscricao.php:validation for field participante_id;validation for field tipo_participacao_id
+#: Model/InscricaoAtividade.php:validation for field id;validation for field inscricao_id;validation for field atividade_id
+#: Model/TipoAtividade.php:validation for field idTipo_atividade
+#: Model/TipoParticipacao.php:validation for field valor;validation for field tipo_participante_id
+#: Model/TipoParticipacaoTipoAtividade.php:validation for field tipo_atividade_id;validation for field tipo_participacao_id
+#: Model/TipoParticipante.php:validation for field idTipo_participante
+msgid "numeric"
+msgstr ""
+
+#: Model/Atividade.php:validation for field titulo;validation for field descricao
+#: Model/TipoAtividade.php:validation for field descricao
+#: Model/TipoParticipacao.php:validation for field descricao
+#: Model/TipoParticipante.php:validation for field descricao
+msgid "notEmpty"
+msgstr ""
+
+#: Model/Inscricao.php:validation for field data_inscricao
+#: Model/TipoParticipacao.php:validation for field inicio_inscricao;validation for field fim_inscricao
+msgid "date"
+msgstr ""
+
+#: Model/Inscricao.php:validation for field participante_id
+msgid "Participante ja inscrito"
+msgstr ""
+
+#: Model/InscricaoAtividade.php:validation for field unico
+msgid "Atividade ja cadastrada para essa inscricao"
+msgstr ""
+
+#: Model/Participante.php:validation for field nome
+msgid "Nome do participante nao pode ficar vazio!"
+msgstr ""
+
+#: Model/Participante.php:validation for field cpf
+msgid "CPF nao pode ficar vazio!"
+msgstr ""
+
+#: Model/Participante.php:validation for field cpf
+msgid "CPF ja esta em uso"
+msgstr ""
+
+#: Model/Participante.php:validation for field nascimento
+msgid "Informe a data de nascimento!"
+msgstr ""
+
+#: Model/Participante.php:validation for field email
+msgid "Informe um e-mail valido"
+msgstr ""
+
+#: Model/Participante.php:validation for field email
+msgid "Email ja esta em uso"
+msgstr ""
+
+#: Model/Participante.php:validation for field senha
+msgid "Senha obrigatorio"
+msgstr ""
+
+#: Model/Participante.php:validation for field confirmacaoSenha
+msgid "Confirme sua senha."
+msgstr ""
+
+#: Model/Participante.php:validation for field confirmacaoSenha
+msgid "As senhas não são iguais"
+msgstr ""
+
+#: Model/TipoAtividade.php:validation for field agrupar
+msgid "boolean"
+msgstr ""
+

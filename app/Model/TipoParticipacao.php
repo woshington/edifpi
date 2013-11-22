@@ -96,4 +96,19 @@ class TipoParticipacao extends AppModel {
 		return $retorno;
 	}
 
+	public function afterFind($results, $primary = false) {
+	    foreach ($results as $key => $val) {
+	        if (isset($val['TipoParticipacao']['inicio_inscricao'])) {
+	            $results[$key]['TipoParticipacao']['inicio_inscricao'] = $this->dateFormatAfterFind($val['TipoParticipacao']['inicio_inscricao']);
+	        }
+	    }
+	    return $results;
+	}
+	public function beforeSave($options = array()){			
+        if (isset($this->data['TipoParticipacao']['inicio_inscricao'])) {
+        	$this->data['TipoParticipacao']['inicio_inscricao'] = $this->dateFormatBeforeSave($this->data['TipoParticipacao']['inicio_inscricao']);
+        }
+        return true;
+	}
+
 }

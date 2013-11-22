@@ -9,16 +9,6 @@ class Atividade extends AppModel {
 	public $displayField = 'descricao';
 
 	public $validate = array(
-		'id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'titulo' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
@@ -38,17 +28,8 @@ class Atividade extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
-		'tipo_atividade_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		),		
+
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -85,10 +66,36 @@ class Atividade extends AppModel {
 				if($tipo['agrupar']){
 					$atividades['agrupados'][$tipo['descricao']][$atividade['id']] = $atividade['titulo'];
 				}else{
-					$atividades[$atividade['id']] = $atividade['titulo'].': '.$atividade['descricao'];
+					$atividades[$atividade['id']] = $atividade['titulo'].': '.$atividade['descricao']." - ".$atividade['turno'];
 				}
 			}			
 		}
 		return $atividades;
 	}	
+	public function getAtividadesTurno($atividadeId, $tipoParticipacao){
+		$TipoParticipacao = ClassRegistry::init('TipoParticipacao');
+		$tipoParticipacao = $TipoParticipacao->findById($tipoParticipacao);
+		if(!$tipoParticipacao['TipoParticipacao']['mini_adicional']){
+			return null;
+		}else{
+			$atividades = array();
+			$atividade = $this->findById($atividadeId);
+			foreach($tipoParticipacao['TipoAtividade'] as $tp){
+				$index = $this->find('first', array(
+					'conditions'=>array(
+						'not'=>array(
+							'turno'=>$atividade['Atividade']['turno'],
+						),
+						'Atividade.tipo_atividade_id'=>$tp['id'],
+						'TipoAtividade.agrupar'=>false
+					)
+				));
+				if($index){
+					$atividades[$index['Atividade']['id']] = $index['Atividade']['titulo'].": ".$index['Atividade']['descricao'];
+				}							
+			}
+			return $atividades;
+		}		
+		
+	}
 }

@@ -14,10 +14,14 @@
 		echo $this->Form->input('tipo_participacao_id', array(
 			'id'=>'tipoParticipacao',
 			'empty'=>'---- Selecione um tipo de participacao ----'
-		));				
+		));						
 		echo $this->Form->input('Atividade', array(
 			'type'=>'select', 			
 			'id'=>'atividades',
+		));
+		echo $this->Form->input('Atividade.atividade2', array(
+			'type'=>'select', 			
+			'id'=>'atividades2',
 		));
 	?>
 	<ul id='agrupados'></ul>

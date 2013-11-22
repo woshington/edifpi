@@ -99,7 +99,7 @@ class Participante extends AppModel {
             $this->data[$this->alias]['senha'] = AuthComponent::password($this->data[$this->alias]['senha']);
         }
         if (isset($this->data[$this->alias]['nascimento'])) {
-        	$this->data[$this->alias]['nascimento'] = $this->dateFormatBeforeFind($this->data[$this->alias]['nascimento']);        
+        	$this->data[$this->alias]['nascimento'] = $this->dateFormatBeforeSave($this->data[$this->alias]['nascimento']);        
         }
         return true;
 	}

@@ -18,6 +18,10 @@
 			'type'=>'select', 			
 			'id'=>'atividades',
 		));
+		echo $this->Form->input('Atividade.atividade2', array(
+			'type'=>'select', 			
+			'id'=>'atividades2',
+		));
 	?>
 	<ul id='agrupados'></ul>
 	</fieldset>

@@ -122,7 +122,11 @@ class ParticipantesController extends AppController {
 				)
     		));    		
     		if(count($usuario)>0){
-    			$this->loginAutomatico($usuario['Participante']['id']);
+    			if(!$usuario['Participante']['admin']){
+    				$this->loginAutomatico($usuario['Participante']['id']);
+    			}else{
+    				$this->Session->setFlash('Funcao nao permitida para administrador.');
+    			}
     		}else{
     			$this->Session->setFlash('O nome de usuário ou o cpf estão errados. Tente novamente.');
     		}

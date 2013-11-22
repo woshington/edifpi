@@ -6,16 +6,18 @@
 			<th><?php echo $this->Paginator->sort('titulo'); ?></th>
 			<th><?php echo $this->Paginator->sort('descricao'); ?></th>
 			<th><?php echo $this->Paginator->sort('tipo_atividade_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('turno'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($atividades as $atividade): ?>
 	<tr>
 		<td><?php echo h($atividade['Atividade']['id']); ?>&nbsp;</td>
 		<td><?php echo h($atividade['Atividade']['titulo']); ?>&nbsp;</td>
-		<td><?php echo h($atividade['Atividade']['descricao']); ?>&nbsp;</td>
+		<td><?php echo h($atividade['Atividade']['descricao']); ?>&nbsp;</td>		
 		<td>
 			<?php echo $this->Html->link($atividade['TipoAtividade']['descricao'], array('controller' => 'tipo_atividades', 'action' => 'view', $atividade['TipoAtividade']['id'])); ?>
 		</td>
+		<td><?php echo h($atividade['Atividade']['turno']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $atividade['Atividade']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $atividade['Atividade']['id'])); ?>			

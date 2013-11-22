@@ -24,7 +24,7 @@
 				<span style="position: absolute; left: 150px; top: 7px; ">
 				<?php 
 					echo $this->element('menuAdmin');
-				else:
+				elseif($logado):
 					echo $this->element('menu');
 				endif;
 				?>

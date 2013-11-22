@@ -13,6 +13,7 @@
 		echo $this->Form->input('inicio_inscricao', array('type'=>'text', 'class'=>'data'));
 		echo $this->Form->input('fim_inscricao', array('type'=>'text', 'class'=>'data'));
 		echo $this->Form->input('tipo_participante_id');
+		echo $this->Form->input('mini_adicional');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
