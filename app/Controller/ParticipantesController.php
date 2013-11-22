@@ -153,6 +153,15 @@ class ParticipantesController extends AppController {
 				'Inscricao.status'=>true
 			)
 		);
+		$total = $this->Inscricao->find('first', array(
+			'fields'=>array(
+				'sum(TipoParticipacao.valor) as "Total"'
+			),
+			'conditions'=>array(
+				'Inscricao.status'=>true
+			)
+		));
+		$this->set('total', $total);
 		$this->set('inscricaos', $this->Paginator->paginate('Inscricao'));
     }
     public function admin_semInscricao(){

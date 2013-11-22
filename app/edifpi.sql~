@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 22-Nov-2013 às 11:31
+-- Data de Criação: 16-Nov-2013 às 18:26
 -- Versão do servidor: 5.5.33a-MariaDB
 -- versão do PHP: 5.5.4
 
@@ -30,7 +30,6 @@ CREATE TABLE IF NOT EXISTS `atividade` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(100) NOT NULL,
   `descricao` varchar(255) NOT NULL,
-  `turno` varchar(20) NOT NULL,
   `tipo_atividade_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_atividade_tipo_atividade1` (`tipo_atividade_id`)
@@ -40,11 +39,11 @@ CREATE TABLE IF NOT EXISTS `atividade` (
 -- Extraindo dados da tabela `atividade`
 --
 
-INSERT INTO `atividade` (`id`, `titulo`, `descricao`, `turno`, `tipo_atividade_id`) VALUES
-(1, 'Palestra C', 'Palestra A', 'noite', 1),
-(2, 'Palestras B', 'Palestra B', 'noite', 1),
-(3, 'Minicurso 1 ', 'Ruby on Rails', 'tarde', 2),
-(4, 'Minicurso 3', 'Git', 'manha', 2);
+INSERT INTO `atividade` (`id`, `titulo`, `descricao`, `tipo_atividade_id`) VALUES
+(1, 'Palestra A', 'Palestra A', 1),
+(2, 'Palestras B', 'Palestra B', 1),
+(3, 'Minicurso 1 ', 'Ruby on Rails', 2),
+(4, 'Minicurso 3', 'Git', 2);
 
 -- --------------------------------------------------------
 
@@ -57,29 +56,22 @@ CREATE TABLE IF NOT EXISTS `inscricao` (
   `created` date NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `data_pagamento` date DEFAULT NULL,
-  `adicional` tinyint(1) NOT NULL,
   `participante_id` int(11) NOT NULL,
   `tipo_participacao_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `participante_id` (`participante_id`),
   KEY `fk_inscricao_tipo_participacao1` (`tipo_participacao_id`),
   KEY `participante_id_2` (`participante_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `inscricao`
 --
 
-INSERT INTO `inscricao` (`id`, `created`, `status`, `data_pagamento`, `adicional`, `participante_id`, `tipo_participacao_id`) VALUES
-(1, '2013-11-19', 0, NULL, 0, 42, 1),
-(4, '2013-11-14', 0, NULL, 0, 5, 1),
-(6, '2013-11-16', 0, NULL, 0, 36, 5),
-(7, '2013-11-08', 1, '2013-11-19', 0, 44, 4),
-(8, '2013-11-18', 0, NULL, 0, 38, 1),
-(9, '2013-11-19', 0, NULL, 0, 46, 1),
-(10, '2013-11-22', 0, NULL, 0, 47, 5),
-(12, '2013-11-22', 1, '2013-11-22', 0, 45, 4),
-(13, '2013-11-22', 1, '2013-11-22', 0, 43, 4);
+INSERT INTO `inscricao` (`id`, `created`, `status`, `data_pagamento`, `participante_id`, `tipo_participacao_id`) VALUES
+(1, '2013-11-16', 0, NULL, 42, 4),
+(4, '2013-11-14', 0, NULL, 5, 1),
+(6, '2013-11-16', 0, NULL, 36, 1);
 
 -- --------------------------------------------------------
 
@@ -94,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `inscricao_atividade` (
   PRIMARY KEY (`id`),
   KEY `fk_inscricao_has_atividade_inscricao1` (`inscricao_id`),
   KEY `fk_inscricao_has_atividade_atividade1` (`atividade_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Extraindo dados da tabela `inscricao_atividade`
@@ -105,27 +97,9 @@ INSERT INTO `inscricao_atividade` (`id`, `inscricao_id`, `atividade_id`) VALUES
 (7, 4, 2),
 (15, 1, 1),
 (16, 1, 2),
+(20, 1, 3),
 (22, 6, 1),
-(23, 6, 2),
-(28, 7, 1),
-(29, 7, 2),
-(30, 8, 1),
-(31, 8, 2),
-(32, 7, 3),
-(34, 9, 1),
-(35, 9, 2),
-(37, 10, 1),
-(38, 10, 2),
-(47, 10, 3),
-(48, 10, 4),
-(54, 6, 3),
-(55, 6, 4),
-(57, 12, 1),
-(58, 12, 2),
-(60, 12, 4),
-(61, 13, 3),
-(62, 13, 1),
-(63, 13, 2);
+(23, 6, 2);
 
 -- --------------------------------------------------------
 
@@ -169,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `participante` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `fk_Participante_Instituicao` (`instituicao_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
 -- Extraindo dados da tabela `participante`
@@ -182,13 +156,7 @@ INSERT INTO `participante` (`id`, `nome`, `cpf`, `nascimento`, `email`, `senha`,
 (39, 'Caio henrique', '04962462326', '1994-02-17', 'caiohenrique@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 1),
 (40, 'abcdef', '23466090909', '1991-02-06', 'teste@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 0, 1),
 (41, 'david bob 1', '05566666666', '1990-02-06', 'bob@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 3),
-(42, 'Clesio GonÃ§alves', '89898989898', '2000-09-07', 'testeclesio@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 2),
-(43, 'weslley valdeci de sousa', '43722424305', '1991-02-06', 'abc@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 0, 1),
-(44, 'David', '05561355398', '1995-02-03', 'david@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 2),
-(45, 'teste', '11111111111', '2008-08-08', 'teste2@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 0, 1),
-(46, 'Artur Luiz Torres de Oliveira', '03041086425', '1979-01-12', 'artur@ifpi.edu.br', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 2),
-(47, 'weslley valdeci de sousa', '09090909090', '2000-09-09', 'teste3@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 0, 1),
-(48, 'admin', '99999999999', '2013-11-22', 'admin@edifpi.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 1, 2);
+(42, 'Clesio GonÃ§alves', '89898989898', '2000-09-07', 'testeclesio@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -224,21 +192,19 @@ CREATE TABLE IF NOT EXISTS `tipo_participacao` (
   `inicio_inscricao` date NOT NULL,
   `fim_inscricao` date NOT NULL,
   `tipo_participante_id` int(11) NOT NULL,
-  `mini_adicional` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_tipo_participacao_tipo_participante1` (`tipo_participante_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `tipo_participacao`
 --
 
-INSERT INTO `tipo_participacao` (`id`, `descricao`, `valor`, `inicio_inscricao`, `fim_inscricao`, `tipo_participante_id`, `mini_adicional`) VALUES
-(1, 'Somente palestras', 20.00, '2013-11-12', '2013-12-05', 1, 0),
-(2, 'Somente palestras', 40.00, '2013-11-12', '2013-12-05', 2, 0),
-(3, 'Palestras e minicurso', 40.00, '2013-11-13', '2013-12-04', 1, 0),
-(4, 'Palestras e minicurso', 60.00, '2013-11-13', '2013-12-04', 2, 0),
-(5, 'Palestras e 2 minicursos', 70.00, '2013-11-21', '2013-11-04', 1, 1);
+INSERT INTO `tipo_participacao` (`id`, `descricao`, `valor`, `inicio_inscricao`, `fim_inscricao`, `tipo_participante_id`) VALUES
+(1, 'Somente palestras', 20.00, '2013-11-12', '2013-12-05', 1),
+(2, 'Somente palestras', 40.00, '2013-11-12', '2013-12-05', 2),
+(3, 'Palestras e minicurso', 40.00, '2013-11-13', '2013-12-04', 1),
+(4, 'Palestras e minicurso', 60.00, '2013-11-13', '2013-12-04', 2);
 
 -- --------------------------------------------------------
 
@@ -253,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `tipo_participacao_tipo_atividade` (
   PRIMARY KEY (`id`),
   KEY `fk_tipo_participacao_tipo_atividade_tipo_participacao` (`tipo_participacao_id`),
   KEY `fk_tipo_participacao_tipo_atividade_tipo_atividade` (`tipo_atividade_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Extraindo dados da tabela `tipo_participacao_tipo_atividade`
@@ -265,9 +231,7 @@ INSERT INTO `tipo_participacao_tipo_atividade` (`id`, `tipo_atividade_id`, `tipo
 (3, 1, 3),
 (4, 1, 4),
 (5, 2, 3),
-(7, 2, 4),
-(8, 1, 5),
-(9, 2, 5);
+(7, 2, 4);
 
 -- --------------------------------------------------------
 

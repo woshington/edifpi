@@ -38,5 +38,5 @@
 	</div>
 </div>
 <div class="actions">
-
+	<h3>Total: R$<?=$total[0]['Total']?></h3>
 </div>

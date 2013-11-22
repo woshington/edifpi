@@ -20,23 +20,23 @@ msgstr ""
 
 #: Controller/AtividadesController.php:25;41
 msgid "The atividade has been saved."
-msgstr ""
+msgstr "A Atividade foi salva com sucesso!"
 
 #: Controller/AtividadesController.php:28;44
 msgid "The atividade could not be saved. Please, try again."
-msgstr ""
+msgstr "A atividade não pôde ser salva. Tente mais tarde!"
 
 #: Controller/InscricaoAtividadesController.php:37;72;100;130;165;193
 msgid "Invalid inscricao atividade"
-msgstr ""
+msgstr "Atividade inscrição invalida!"
 
 #: Controller/InscricaoAtividadesController.php:52;76;145;169
 msgid "The inscricao atividade has been saved."
-msgstr ""
+msgstr "A inscrição atividade foi salva com sucesso!"
 
 #: Controller/InscricaoAtividadesController.php:55;79;148;172
 msgid "The inscricao atividade could not be saved. Please, try again."
-msgstr ""
+msgstr "A inscrição atividade não pode ser salva. Tente mais tarde!"
 
 #: Controller/InscricaoAtividadesController.php:104;197
 msgid "The inscricao atividade has been deleted."
