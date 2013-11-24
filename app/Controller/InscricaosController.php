@@ -194,7 +194,7 @@ class InscricaosController extends AppController {
     	$this->set("inscricaos", $this->Paginator->paginate());
     }    
 
-    public function admin_confirmar($idInscricao){
+    public function admin_confirmar($idInscricao){    	
     	$participante = $this->Inscricao->find('first', array('conditions'=>array('Inscricao.id'=>$idInscricao)));
     	$this->Inscricao->read(null, $idInscricao); 
     	$this->Inscricao->set(array('status'=>true,'data_pagamento'=>date('Y-m-d')));

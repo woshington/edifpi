@@ -52,11 +52,11 @@ msgstr ""
 
 #: Controller/InscricaosController.php:53;88;152;226
 msgid "The inscricao has been saved."
-msgstr ""
+msgstr "Inscrição salva com sucesso!"
 
 #: Controller/InscricaosController.php:56;91;155;229
 msgid "The inscricao could not be saved. Please, try again."
-msgstr ""
+msgstr "A inscrição não pode ser salva. Por favor, contate o administrador!"
 
 #: Controller/InscricaosController.php:94;232
 msgid "Participante não tem inscrição valida."
@@ -64,79 +64,79 @@ msgstr ""
 
 #: Controller/InstituicaosController.php:14;35
 msgid "Invalid instituicao"
-msgstr ""
+msgstr "Instituição invalida"
 
 #: Controller/InstituicaosController.php:25;39
 msgid "The instituicao has been saved."
-msgstr ""
+msgstr "A instituição foi salva com sucesso!"
 
 #: Controller/InstituicaosController.php:28;42
 msgid "The instituicao could not be saved. Please, try again."
-msgstr ""
+msgstr "A instituição não pode ser salva. Por favor, contate o administrador!"
 
 #: Controller/ParticipantesController.php:22;39;70;90
 msgid "The participante has been saved."
-msgstr ""
+msgstr "Participante salvo com sucesso!"
 
 #: Controller/ParticipantesController.php:25;42;76;93
 msgid "The participante could not be saved. Please, try again."
-msgstr ""
+msgstr "Participante não pode ser salvo, Por favor, contate o administrador!"
 
 #: Controller/ParticipantesController.php:35;60;86
 msgid "Invalid participante"
-msgstr ""
+msgstr "Participante invalido"
 
 #: Controller/TipoAtividadesController.php:16;36
 msgid "Invalid tipo atividade"
-msgstr ""
+msgstr "Tipo de atividade invalido"
 
 #: Controller/TipoAtividadesController.php:26;40
 msgid "The tipo atividade has been saved."
-msgstr ""
+msgstr "Tipo de atividade salvo com sucesso"
 
 #: Controller/TipoAtividadesController.php:29;43
 msgid "The tipo atividade could not be saved. Please, try again."
-msgstr ""
+msgstr "Tipo de atividade não pode ser salvo. Por favor, contate o administrador!"
 
 #: Controller/TipoParticipacaoTipoAtividadesController.php:14;37
 msgid "Invalid tipo participacao tipo atividade"
-msgstr ""
+msgstr "Tipo de participação para tipo de atividade invalido!"
 
 #: Controller/TipoParticipacaoTipoAtividadesController.php:24;41
 msgid "The tipo participacao tipo atividade has been saved."
-msgstr ""
+msgstr "Tipo de participação para tipo de atividade salvo com sucesso!"
 
 #: Controller/TipoParticipacaoTipoAtividadesController.php:27;44
 msgid "The tipo participacao tipo atividade could not be saved. Please, try again."
-msgstr ""
+msgstr "Tipo de participação para tipo de atividade não pode ser salvo. Por favor, contate o administrador!"
 
 #: Controller/TipoParticipacaosController.php:14;38
 msgid "Invalid tipo participacao"
-msgstr ""
+msgstr "Tipo de participação invalido"
 
 #: Controller/TipoParticipacaosController.php:26;42
 msgid "The tipo participacao has been saved."
-msgstr ""
+msgstr "Tipo de participação salvo com sucesso!"
 
 #: Controller/TipoParticipacaosController.php:29;45
 msgid "The tipo participacao could not be saved. Please, try again."
-msgstr ""
+msgstr "Tipo de participação não pode ser salvo. Por favor, contate o administrador!"
 
 #: Controller/TipoParticipantesController.php:12;32
 msgid "Invalid tipo participante"
-msgstr ""
+msgstr "Tipo de participante invalido"
 
 #: Controller/TipoParticipantesController.php:22;36
 msgid "The tipo participante has been saved."
-msgstr ""
+msgstr "Tipo de participante salvo com sucesso!"
 
 #: Controller/TipoParticipantesController.php:25;39
 msgid "The tipo participante could not be saved. Please, try again."
-msgstr ""
+msgstr "Tipo de participante não pode ser salvo. Por favor, contate o administrador!"
 
 #: View/Atividades/admin_add.ctp:4
 msgid "Admin Add Atividade"
-msgstr ""
+msgstr "Adicionar atividade"
 
 #: View/Atividades/admin_add.ctp:11
 #: View/Atividades/admin_edit.ctp:12
@@ -159,7 +159,7 @@ msgstr ""
 #: View/TipoParticipantes/admin_add.ctp:9
 #: View/TipoParticipantes/admin_edit.ctp:10
 msgid "Submit"
-msgstr ""
+msgstr "Salvar"
 
 #: View/Atividades/admin_add.ctp:14
 #: View/Atividades/admin_index.ctp:9
@@ -212,17 +212,17 @@ msgstr "Ações"
 #: View/InscricaoAtividades/index.ctp:47
 #: View/InscricaoAtividades/view.ctp:30
 msgid "List Atividades"
-msgstr ""
+msgstr "Listar atividades"
 
 #: View/Atividades/admin_add.ctp:18
 #: View/TipoParticipacaoTipoAtividades/admin_add.ctp:17
 msgid "List Tipo Atividades"
-msgstr ""
+msgstr "Listar tipos de atividade"
 
 #: View/Atividades/admin_add.ctp:19
 #: View/TipoParticipacaoTipoAtividades/admin_add.ctp:18
 msgid "New Tipo Atividade"
-msgstr ""
+msgstr "Novo tipo de atividade"
 
 #: View/Atividades/admin_add.ctp:20
 #: View/InscricaoAtividades/add.ctp:17
@@ -235,7 +235,7 @@ msgstr ""
 #: View/InscricaoAtividades/view.ctp:28
 #: View/TipoParticipacaos/admin_add.ctp:27
 msgid "List Inscricaos"
-msgstr ""
+msgstr "Listar inscrições"
 
 #: View/Atividades/admin_add.ctp:21
 #: View/InscricaoAtividades/add.ctp:18
@@ -248,15 +248,15 @@ msgstr ""
 #: View/InscricaoAtividades/view.ctp:29
 #: View/TipoParticipacaos/admin_add.ctp:28
 msgid "New Inscricao"
-msgstr ""
+msgstr "Nova inscrição"
 
 #: View/Atividades/admin_edit.ctp:4
 msgid "Admin Edit Atividade"
-msgstr ""
+msgstr "Editar atividade"
 
 #: View/Atividades/admin_index.ctp:2
 msgid "Atividades"
-msgstr ""
+msgstr "Atividades"
 
 #: View/Atividades/admin_index.ctp:20
 #: View/InscricaoAtividades/admin_index.ctp:20
@@ -330,7 +330,7 @@ msgstr "Pagina {:page} de {:pages}, exibindo {:current} registros de {:count} no
 #: View/TipoParticipacaos/admin_index.ctp:39
 #: View/TipoParticipantes/admin_index.ctp:28
 msgid "previous"
-msgstr ""
+msgstr "Anterior"
 
 #: View/Atividades/admin_index.ctp:36
 #: View/InscricaoAtividades/admin_index.ctp:37
@@ -348,13 +348,13 @@ msgstr ""
 #: View/TipoParticipacaos/admin_index.ctp:41
 #: View/TipoParticipantes/admin_index.ctp:30
 msgid "next"
-msgstr ""
+msgstr "Proximo"
 
 #: View/Atividades/admin_view.ctp:2
 #: View/InscricaoAtividades/admin_view.ctp:14
 #: View/InscricaoAtividades/view.ctp:14
 msgid "Atividade"
-msgstr ""
+msgstr "Atividade"
 
 #: View/Atividades/admin_view.ctp:4
 #: View/Inscricaos/view.ctp:4
@@ -364,14 +364,14 @@ msgstr ""
 #: View/TipoParticipacaos/admin_view.ctp:4
 #: View/TipoParticipantes/admin_view.ctp:4;29
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 #: View/Atividades/admin_view.ctp:9
 #: View/Inscricaos/admin_view.ctp:52
 #: View/Inscricaos/view.ctp:47
 #: View/TipoAtividades/admin_view.ctp:33
 msgid "Titulo"
-msgstr ""
+msgstr "Titulo"
 
 #: View/Atividades/admin_view.ctp:14
 #: View/Inscricaos/admin_view.ctp:53
@@ -380,33 +380,33 @@ msgstr ""
 #: View/TipoParticipacaos/admin_view.ctp:9
 #: View/TipoParticipantes/admin_view.ctp:9;30
 msgid "Descricao"
-msgstr ""
+msgstr "Descrição"
 
 #: View/Atividades/admin_view.ctp:19
 #: View/TipoAtividades/admin_view.ctp:2
 #: View/TipoParticipacaoTipoAtividades/admin_view.ctp:9
 msgid "Tipo Atividade"
-msgstr ""
+msgstr "Tipo Atividade"
 
 #: View/Atividades/admin_view.ctp:29
 msgid "Edit Atividade"
-msgstr ""
+msgstr "Editar Atividade"
 
 #: View/Elements/menu.ctp:2
 msgid "Inscrições"
-msgstr ""
+msgstr "Inscrições"
 
 #: View/Elements/menuAdmin.ctp:3
 msgid "Não Confirmados"
-msgstr ""
+msgstr "Não confirmados"
 
 #: View/Elements/menuAdmin.ctp:8
 msgid "Confirmados"
-msgstr ""
+msgstr "Confirmados"
 
 #: View/Elements/menuAdmin.ctp:13
 msgid "Nova inscricao"
-msgstr ""
+msgstr "Nova inscrição"
 
 #: View/Elements/menuAdmin.ctp:18
 #: View/Participantes/admin_sem_inscricao.ctp:3
@@ -459,7 +459,7 @@ msgstr ""
 
 #: View/InscricaoAtividades/add.ctp:4
 msgid "Add Inscricao Atividade"
-msgstr ""
+msgstr "Adicionar inscrição atividade"
 
 #: View/InscricaoAtividades/add.ctp:16
 #: View/InscricaoAtividades/admin_add.ctp:16
@@ -468,7 +468,7 @@ msgstr ""
 #: View/InscricaoAtividades/edit.ctp:18
 #: View/InscricaoAtividades/view.ctp:26
 msgid "List Inscricao Atividades"
-msgstr ""
+msgstr "Listar inscrição atividade"
 
 #: View/InscricaoAtividades/add.ctp:20
 #: View/InscricaoAtividades/admin_add.ctp:20
@@ -479,15 +479,15 @@ msgstr ""
 #: View/InscricaoAtividades/index.ctp:48
 #: View/InscricaoAtividades/view.ctp:31
 msgid "New Atividade"
-msgstr ""
+msgstr "Nova atividade"
 
 #: View/InscricaoAtividades/admin_add.ctp:4
 msgid "Admin Add Inscricao Atividade"
-msgstr ""
+msgstr "Adicionar inscrição atividade"
 
 #: View/InscricaoAtividades/admin_edit.ctp:4
 msgid "Admin Edit Inscricao Atividade"
-msgstr ""
+msgstr "Editar inscrição atividade"
 
 #: View/InscricaoAtividades/admin_edit.ctp:17
 #: View/InscricaoAtividades/admin_index.ctp:22
@@ -496,7 +496,7 @@ msgstr ""
 #: View/Instituicaos/admin_edit.ctp:17
 #: View/Participantes/index.ctp:28
 msgid "Delete"
-msgstr ""
+msgstr "Deletar"
 
 #: View/InscricaoAtividades/admin_edit.ctp:17
 #: View/InscricaoAtividades/admin_index.ctp:22
@@ -507,29 +507,29 @@ msgstr ""
 #: View/Instituicaos/admin_edit.ctp:17
 #: View/Participantes/index.ctp:28
 msgid "Are you sure you want to delete # %s?"
-msgstr ""
+msgstr "Deseja deletar esse registro # %s?"
 
 #: View/InscricaoAtividades/admin_index.ctp:2
 #: View/InscricaoAtividades/index.ctp:2
 msgid "Inscricao Atividades"
-msgstr ""
+msgstr "Inscrição atividade"
 
 #: View/InscricaoAtividades/admin_index.ctp:44
 #: View/InscricaoAtividades/admin_view.ctp:27
 #: View/InscricaoAtividades/index.ctp:44
 #: View/InscricaoAtividades/view.ctp:27
 msgid "New Inscricao Atividade"
-msgstr ""
+msgstr "Nova inscrição atividade"
 
 #: View/InscricaoAtividades/admin_view.ctp:2
 #: View/InscricaoAtividades/view.ctp:2
 msgid "Inscricao Atividade"
-msgstr ""
+msgstr "Inscrição atividade"
 
 #: View/InscricaoAtividades/admin_view.ctp:4
 #: View/InscricaoAtividades/view.ctp:4
 msgid "IdInscricaoAtividade"
-msgstr ""
+msgstr "id"
 
 #: View/InscricaoAtividades/admin_view.ctp:9
 #: View/InscricaoAtividades/view.ctp:9
@@ -542,33 +542,33 @@ msgstr "Inscrição"
 #: View/InscricaoAtividades/edit.ctp:4
 #: View/InscricaoAtividades/view.ctp:24
 msgid "Edit Inscricao Atividade"
-msgstr ""
+msgstr "Editar inscrição atividade"
 
 #: View/InscricaoAtividades/admin_view.ctp:25
 #: View/InscricaoAtividades/view.ctp:25
 msgid "Delete Inscricao Atividade"
-msgstr ""
+msgstr "Delete"
 
 #: View/Inscricaos/add.ctp:11
 msgid "Add Inscricao"
-msgstr ""
+msgstr "Adicionar inscrição"
 
 #: View/Inscricaos/add.ctp:24
 #: View/Inscricaos/admin_add.ctp:24
 #: View/Inscricaos/admin_edit.ctp:25
 #: View/Inscricaos/edit.ctp:25
 msgid "Salvar"
-msgstr ""
+msgstr "Salvar"
 
 #: View/Inscricaos/admin_add.ctp:11
 #: View/Inscricaos/admin_edit.ctp:11
 msgid "Admin add Inscricao"
-msgstr ""
+msgstr "Adicionar inscrição"
 
 #: View/Inscricaos/admin_index.ctp:2
 #: View/Inscricaos/index.ctp:2
 msgid "Inscricaos"
-msgstr ""
+msgstr "Inscrições"
 
 #: View/Inscricaos/admin_index.ctp:44
 #: View/Inscricaos/index.ctp:42
@@ -586,12 +586,12 @@ msgstr ""
 
 #: View/Inscricaos/admin_listar_nao_confirmados.ctp:26
 msgid "Confirmar inscricao de # %s?"
-msgstr ""
+msgstr "Confirmar inscrição de # %s?"
 
 #: View/Inscricaos/admin_view.ctp:4
 #: View/Inscricaos/view.ctp:9
 msgid "Data Inscricao"
-msgstr ""
+msgstr "Data inscrição"
 
 #: View/Inscricaos/admin_view.ctp:9
 #: View/Inscricaos/view.ctp:14
@@ -615,29 +615,29 @@ msgstr ""
 #: View/TipoParticipacaoTipoAtividades/admin_view.ctp:14
 #: View/TipoParticipacaos/admin_view.ctp:2
 msgid "Tipo Participacao"
-msgstr ""
+msgstr "Tipo Participação"
 
 #: View/Inscricaos/admin_view.ctp:38
 msgid "Editar inscricao"
-msgstr ""
+msgstr "Editar inscrição"
 
 #: View/Inscricaos/admin_view.ctp:48
 #: View/Inscricaos/view.ctp:43
 #: View/TipoAtividades/admin_view.ctp:28
 msgid "Related Atividades"
-msgstr ""
+msgstr "Atividades relacionadas"
 
 #: View/Inscricaos/edit.ctp:11
 msgid "Edit Inscricao"
-msgstr ""
+msgstr "Editar inscrições"
 
 #: View/Inscricaos/view.ctp:38
 msgid "Inicio"
-msgstr ""
+msgstr "Inicio"
 
 #: View/Instituicaos/admin_add.ctp:4
 msgid "Add Instituicao"
-msgstr ""
+msgstr "Adicionar instituição"
 
 #: View/Instituicaos/admin_add.ctp:16
 #: View/Instituicaos/admin_edit.ctp:18
@@ -647,14 +647,14 @@ msgstr ""
 #: View/Participantes/admin_sem_inscricao.ctp:47
 #: View/Participantes/index.ctp:51
 msgid "List Instituicaos"
-msgstr ""
+msgstr "Listar instituições"
 
 #: View/Instituicaos/admin_add.ctp:17
 #: View/Instituicaos/admin_edit.ctp:19
 #: View/Instituicaos/admin_index.ctp:39
 #: View/Participantes/admin_add.ctp:29
 msgid "List Participantes"
-msgstr ""
+msgstr "Listar participantes"
 
 #: View/Instituicaos/admin_add.ctp:18
 #: View/Instituicaos/admin_edit.ctp:20
@@ -663,16 +663,16 @@ msgstr ""
 #: View/Participantes/admin_sem_inscricao.ctp:46
 #: View/Participantes/index.ctp:50
 msgid "New Participante"
-msgstr ""
+msgstr "Novo participante"
 
 #: View/Instituicaos/admin_edit.ctp:4
 #: View/Instituicaos/admin_view.ctp:19
 msgid "Edit Instituicao"
-msgstr ""
+msgstr "Editar instituição"
 
 #: View/Instituicaos/admin_index.ctp:2
 msgid "Instituicaos"
-msgstr ""
+msgstr "Instituições"
 
 #: View/Instituicaos/admin_index.ctp:38
 #: View/Instituicaos/admin_view.ctp:22
@@ -681,39 +681,39 @@ msgstr ""
 #: View/Participantes/admin_sem_inscricao.ctp:48
 #: View/Participantes/index.ctp:52
 msgid "New Instituicao"
-msgstr ""
+msgstr "Nova instituição"
 
 #: View/Instituicaos/admin_view.ctp:2
 #: View/Participantes/admin_view.ctp:24
 #: View/Participantes/view.ctp:24
 msgid "Instituicao"
-msgstr ""
+msgstr "Instituição"
 
 #: View/Instituicaos/admin_view.ctp:4;31
 #: View/Participantes/admin_view.ctp:4
 #: View/Participantes/view.ctp:4
 msgid "Nome"
-msgstr ""
+msgstr "Nome"
 
 #: View/Instituicaos/admin_view.ctp:9
 msgid "Sigla"
-msgstr ""
+msgstr "Sigla"
 
 #: View/Instituicaos/admin_view.ctp:26
 msgid "Related Participantes"
-msgstr ""
+msgstr "Participantes relacionados"
 
 #: View/Instituicaos/admin_view.ctp:32
 #: View/Participantes/admin_view.ctp:9
 #: View/Participantes/view.ctp:9
 msgid "Cpf"
-msgstr ""
+msgstr "CPF"
 
 #: View/Instituicaos/admin_view.ctp:33
 #: View/Participantes/admin_view.ctp:14
 #: View/Participantes/view.ctp:14
 msgid "Nascimento"
-msgstr ""
+msgstr "Nascimento"
 
 #: View/Instituicaos/admin_view.ctp:34
 msgid "Instituicao Id"
@@ -722,7 +722,7 @@ msgstr ""
 #: View/Participantes/add.ctp:10
 #: View/Participantes/admin_add.ctp:10
 msgid "Add Participante"
-msgstr ""
+msgstr "Adicionar participante"
 
 #: View/Participantes/admin_confirmados.ctp:2
 msgid "Inscricaos confirmadas"
@@ -758,27 +758,27 @@ msgstr ""
 #: View/Participantes/edit.ctp:10
 #: View/Participantes/view.ctp:34
 msgid "Edit Participante"
-msgstr ""
+msgstr "Editar participante"
 
 #: View/TipoAtividades/admin_add.ctp:4
 msgid "Admin Add Tipo Atividade"
-msgstr ""
+msgstr "Adicionar tipo de atividade"
 
 #: View/TipoAtividades/admin_edit.ctp:4
 msgid "Admin Edit Tipo Atividade"
-msgstr ""
+msgstr "Editar tipo de atividade"
 
 #: View/TipoAtividades/admin_index.ctp:2
 msgid "Tipo Atividades"
-msgstr ""
+msgstr "Tipo de atividade"
 
 #: View/TipoAtividades/admin_view.ctp:14
 msgid "Agrupar"
-msgstr ""
+msgstr "Agrupar"
 
 #: View/TipoAtividades/admin_view.ctp:24
 msgid "Edit Tipo Atividade"
-msgstr ""
+msgstr "Editar tipo de atividade"
 
 #: View/TipoAtividades/admin_view.ctp:35
 msgid "Tipo Atividade Id"
@@ -786,11 +786,11 @@ msgstr ""
 
 #: View/TipoParticipacaoTipoAtividades/admin_add.ctp:4
 msgid "Admin Add Tipo Participacao Tipo Atividade"
-msgstr ""
+msgstr "Adicionar Tipo de participação para Tipo Atividade"
 
 #: View/TipoParticipacaoTipoAtividades/admin_add.ctp:16
 msgid "List Tipo Participacao Tipo Atividades"
-msgstr ""
+msgstr "Listar Tipo de participação para Tipo Atividade"
 
 #: View/TipoParticipacaoTipoAtividades/admin_add.ctp:19
 #: View/TipoParticipacaos/admin_add.ctp:24
@@ -799,23 +799,23 @@ msgstr "Listar tipo de participações"
 
 #: View/TipoParticipacaoTipoAtividades/admin_add.ctp:20
 msgid "New Tipo Participacao"
-msgstr ""
+msgstr "Novo Tipo de Participação"
 
 #: View/TipoParticipacaoTipoAtividades/admin_edit.ctp:4
 msgid "Admin Edit Tipo Participacao Tipo Atividade"
-msgstr ""
+msgstr "Editar Tipo de Participação para Tipo Atividade"
 
 #: View/TipoParticipacaoTipoAtividades/admin_index.ctp:2
 msgid "Tipo Participacao Tipo Atividades"
-msgstr ""
+msgstr "Tipo de Participação Tipo Atividades"
 
 #: View/TipoParticipacaoTipoAtividades/admin_view.ctp:2
 msgid "Tipo Participacao Tipo Atividade"
-msgstr ""
+msgstr "Tipo de Participação Tipo Atividade"
 
 #: View/TipoParticipacaoTipoAtividades/admin_view.ctp:24
 msgid "Edit Tipo Participacao Tipo Atividade"
-msgstr ""
+msgstr "Editar tipo de participação tipo atividade"
 
 #: View/TipoParticipacaos/admin_add.ctp:9
 msgid "Add Tipo Participacao"
@@ -824,7 +824,7 @@ msgstr "Novo tipo de participação"
 #: View/TipoParticipacaos/admin_add.ctp:25
 #: View/TipoParticipantes/admin_view.ctp:20
 msgid "List Tipo Participantes"
-msgstr ""
+msgstr "Listar tipos de participante"
 
 #: View/TipoParticipacaos/admin_add.ctp:26
 #: View/TipoParticipantes/admin_index.ctp:37
@@ -835,7 +835,7 @@ msgstr "Novo"
 #: View/TipoParticipacaos/admin_edit.ctp:4
 #: View/TipoParticipacaos/admin_view.ctp:39
 msgid "Edit Tipo Participacao"
-msgstr ""
+msgstr "Editar tipo de participação"
 
 #: View/TipoParticipacaos/admin_index.ctp:2
 msgid "Tipo Participacaos"
@@ -854,7 +854,7 @@ msgstr ""
 #: View/TipoParticipacaos/admin_view.ctp:24
 #: View/TipoParticipantes/admin_view.ctp:33
 msgid "Fim Inscricao"
-msgstr ""
+msgstr "Fim Inscrição"
 
 #: View/TipoParticipacaos/admin_view.ctp:29
 #: View/TipoParticipantes/admin_view.ctp:2
@@ -863,20 +863,20 @@ msgstr ""
 
 #: View/TipoParticipantes/admin_add.ctp:4
 msgid "Add Tipo Participante"
-msgstr ""
+msgstr "Adicionar tipo de participante"
 
 #: View/TipoParticipantes/admin_edit.ctp:4
 #: View/TipoParticipantes/admin_view.ctp:19
 msgid "Edit Tipo Participante"
-msgstr ""
+msgstr "Editar tipo de participante"
 
 #: View/TipoParticipantes/admin_index.ctp:2
 msgid "Tipo Participantes"
-msgstr ""
+msgstr "Tipo de participante"
 
 #: View/TipoParticipantes/admin_view.ctp:25
 msgid "Related Tipo Participacaos"
-msgstr ""
+msgstr "Tipo de participações relacionadas"
 
 #: View/TipoParticipantes/admin_view.ctp:34
 msgid "Tipo Participante Id"
@@ -951,4 +951,3 @@ msgstr ""
 #: Model/TipoAtividade.php:validation for field agrupar
 msgid "boolean"
 msgstr ""
-

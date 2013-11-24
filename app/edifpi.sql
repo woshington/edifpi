@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 22-Nov-2013 às 11:31
+-- Data de Criação: 24-Nov-2013 às 19:20
 -- Versão do servidor: 5.5.33a-MariaDB
 -- versão do PHP: 5.5.4
 
@@ -34,17 +34,14 @@ CREATE TABLE IF NOT EXISTS `atividade` (
   `tipo_atividade_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_atividade_tipo_atividade1` (`tipo_atividade_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `atividade`
 --
 
 INSERT INTO `atividade` (`id`, `titulo`, `descricao`, `turno`, `tipo_atividade_id`) VALUES
-(1, 'Palestra C', 'Palestra A', 'noite', 1),
-(2, 'Palestras B', 'Palestra B', 'noite', 1),
-(3, 'Minicurso 1 ', 'Ruby on Rails', 'tarde', 2),
-(4, 'Minicurso 3', 'Git', 'manha', 2);
+(5, 'CakePHP', 'Framework de desenvolvimento rÃ¡pido para PHP', 'tarde', 2);
 
 -- --------------------------------------------------------
 
@@ -64,22 +61,14 @@ CREATE TABLE IF NOT EXISTS `inscricao` (
   UNIQUE KEY `participante_id` (`participante_id`),
   KEY `fk_inscricao_tipo_participacao1` (`tipo_participacao_id`),
   KEY `participante_id_2` (`participante_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Extraindo dados da tabela `inscricao`
 --
 
 INSERT INTO `inscricao` (`id`, `created`, `status`, `data_pagamento`, `adicional`, `participante_id`, `tipo_participacao_id`) VALUES
-(1, '2013-11-19', 0, NULL, 0, 42, 1),
-(4, '2013-11-14', 0, NULL, 0, 5, 1),
-(6, '2013-11-16', 0, NULL, 0, 36, 5),
-(7, '2013-11-08', 1, '2013-11-19', 0, 44, 4),
-(8, '2013-11-18', 0, NULL, 0, 38, 1),
-(9, '2013-11-19', 0, NULL, 0, 46, 1),
-(10, '2013-11-22', 0, NULL, 0, 47, 5),
-(12, '2013-11-22', 1, '2013-11-22', 0, 45, 4),
-(13, '2013-11-22', 1, '2013-11-22', 0, 43, 4);
+(14, '2013-11-24', 0, NULL, 0, 50, 3);
 
 -- --------------------------------------------------------
 
@@ -94,38 +83,14 @@ CREATE TABLE IF NOT EXISTS `inscricao_atividade` (
   PRIMARY KEY (`id`),
   KEY `fk_inscricao_has_atividade_inscricao1` (`inscricao_id`),
   KEY `fk_inscricao_has_atividade_atividade1` (`atividade_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Extraindo dados da tabela `inscricao_atividade`
 --
 
 INSERT INTO `inscricao_atividade` (`id`, `inscricao_id`, `atividade_id`) VALUES
-(6, 4, 1),
-(7, 4, 2),
-(15, 1, 1),
-(16, 1, 2),
-(22, 6, 1),
-(23, 6, 2),
-(28, 7, 1),
-(29, 7, 2),
-(30, 8, 1),
-(31, 8, 2),
-(32, 7, 3),
-(34, 9, 1),
-(35, 9, 2),
-(37, 10, 1),
-(38, 10, 2),
-(47, 10, 3),
-(48, 10, 4),
-(54, 6, 3),
-(55, 6, 4),
-(57, 12, 1),
-(58, 12, 2),
-(60, 12, 4),
-(61, 13, 3),
-(62, 13, 1),
-(63, 13, 2);
+(1, 14, 5);
 
 -- --------------------------------------------------------
 
@@ -169,26 +134,15 @@ CREATE TABLE IF NOT EXISTS `participante` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `fk_Participante_Instituicao` (`instituicao_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
 
 --
 -- Extraindo dados da tabela `participante`
 --
 
 INSERT INTO `participante` (`id`, `nome`, `cpf`, `nascimento`, `email`, `senha`, `status`, `admin`, `instituicao_id`) VALUES
-(5, 'woshington valdeci de sousa', '23722424305', '1992-02-06', 'woshingtonvaldeci@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 1, 2),
-(36, 'woshington valdeci', '13722424305', '1991-02-06', 'woshington@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 0, 1),
-(38, 'david bob 1', '05561355392', '1995-02-03', 'daviddluz@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 2),
-(39, 'Caio henrique', '04962462326', '1994-02-17', 'caiohenrique@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 1),
-(40, 'abcdef', '23466090909', '1991-02-06', 'teste@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 0, 1),
-(41, 'david bob 1', '05566666666', '1990-02-06', 'bob@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 3),
-(42, 'Clesio GonÃ§alves', '89898989898', '2000-09-07', 'testeclesio@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 2),
-(43, 'weslley valdeci de sousa', '43722424305', '1991-02-06', 'abc@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 0, 1),
-(44, 'David', '05561355398', '1995-02-03', 'david@gmail.com', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 2),
-(45, 'teste', '11111111111', '2008-08-08', 'teste2@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 0, 1),
-(46, 'Artur Luiz Torres de Oliveira', '03041086425', '1979-01-12', 'artur@ifpi.edu.br', 'e50d693551278ed3f0bc9bd5b4a1ee2be126aa66', 1, 0, 2),
-(47, 'weslley valdeci de sousa', '09090909090', '2000-09-09', 'teste3@gmail.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 0, 1),
-(48, 'admin', '99999999999', '2013-11-22', 'admin@edifpi.com', 'e061df686a65bdf7a5ee7b2d358a991f3e067311', 1, 1, 2);
+(49, 'edifpi 2013', '11111111111', '2013-12-04', 'edifpi@edu.br', '2fdc4f14b0fa85902f33a46c89209484647e5aac', 1, 1, 2),
+(50, 'woshington valdeci de sousa', '03722424305', '1991-02-06', 'woshington@gmail.com', '1801410dbf8e5a789ab33c83949529dc4f0a77c6', 1, 1, 2);
 
 -- --------------------------------------------------------
 
