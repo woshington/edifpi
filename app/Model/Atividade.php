@@ -90,9 +90,12 @@ class Atividade extends AppModel {
 						'TipoAtividade.agrupar'=>false
 					)
 				));
-				if($index){
+				foreach($index as $at){
+					$atividades[$at['Atividade']['id']] = $at['Atividade']['titulo'].": ".$at['Atividade']['descricao'];
+				}
+				/*if($index){
 					$atividades[$index['Atividade']['id']] = $index['Atividade']['titulo'].": ".$index['Atividade']['descricao'];
-				}							
+				}*/							
 			}
 			return $atividades;
 		}		
