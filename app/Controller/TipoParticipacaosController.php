@@ -2,7 +2,7 @@
 App::uses('AppController', 'Controller');
 
 class TipoParticipacaosController extends AppController {
-
+	public $helpers = array('Form');
 	public $components = array('Paginator');
 	public function admin_index() {
 		$this->TipoParticipacao->recursive = 0;
