@@ -81,7 +81,7 @@ class Atividade extends AppModel {
 			$atividades = array();
 			$atividade = $this->findById($atividadeId);
 			foreach($tipoParticipacao['TipoAtividade'] as $tp){
-				$index = $this->find('first', array(
+				$index = $this->find('all', array(
 					'conditions'=>array(
 						'not'=>array(
 							'turno'=>$atividade['Atividade']['turno'],
