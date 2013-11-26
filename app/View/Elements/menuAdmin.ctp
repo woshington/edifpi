@@ -10,6 +10,11 @@
 		'action'=>'confirmados',
 		'admin'=>1
 	))."&nbsp;&nbsp;";
+	echo $this->Html->link(__('Frequencia'), array(
+		'controller'=>'participantes',
+		'action'=>'frequencia',
+		'admin'=>1
+	))."&nbsp;&nbsp;";
 	echo $this->Html->link(__('Nova inscricao'), array(
 		'controller'=>'participantes',
 		'action'=>'add',

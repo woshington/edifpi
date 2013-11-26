@@ -2,7 +2,7 @@
 App::uses('AppController', 'Controller');
 
 class ParticipantesController extends AppController {
-	public $uses = array('Participante', 'Inscricao');
+	public $uses = array('Participante', 'Inscricao','InscricaoAtividade','Atividade','TipoAtividade');
 	public $components = array('Paginator');
 	public function beforeFilter(){
 		parent::beforeFilter();
@@ -180,5 +180,47 @@ class ParticipantesController extends AppController {
     		),
     	);    	
 		$this->set('participantes', $this->Paginator->paginate());		
+    }
+    public function admin_frequencia($id = null, $agrupar = false){
+    	if($agrupar){
+    		$ats = $this->Atividade->find('list', array(
+    			'fields'=>array('id'),
+    			'conditions'=>array(
+    				'TipoAtividade.id'=>$id
+    			),
+    			'recursive'=>0
+    		));
+    		
+    	}else{
+    		$ats = $id;
+    	}
+    	$participantes = array();
+    	if(!is_null($id)){
+			$participantes = $this->Inscricao->find('all', array(
+	    		'joins'=>array(
+	    			array(
+	    				'table'=>'inscricao_atividade',
+	    				'alias'=>'InscricaoAtividade',
+	    				'type'=>'inner',
+	    				'conditions'=>array('InscricaoAtividade.inscricao_id = Inscricao.id')
+	    			),
+	    		),	    		
+	    		'fields'=>array('Participante.nome'),
+	    		'conditions'=>array(
+	    			'InscricaoAtividade.atividade_id'=>$ats,
+	    			'Inscricao.status'=>true,
+				),			
+				'order'=>array('InscricaoAtividade.atividade_id'),
+				'group'=>array('Participante.nome')
+	    	));				    	
+    	}
+    	$tiposAgrupados = $this->TipoAtividade->find('list', array(
+    		'conditions'=>array(
+    			'TipoAtividade.agrupar'=>true
+			)
+		));
+    	$this->set('tiposAgrupados', $tiposAgrupados);
+    	$this->set('participantes', $participantes);    	
+    	$this->set('atividades', $this->Atividade->find('all'));
     }
 }
