@@ -202,9 +202,13 @@ class ParticipantesController extends AppController {
     public function admin_imprimirFrequencia($id = null, $agrupar=false){
     	$this->layout = 'pdf';
         ini_set('memory_limit', '256M');
-    	$participantes = array();
+        $participantes = array();
     	if($agrupar){
-    		$tipoAtividade = $this->TipoAtividade->find('first');
+    		$tipoAtividade = $this->TipoAtividade->find('first', array(
+    			'conditions'=>array(
+    				'TipoAtividade.id'=>$id
+    			)
+    		));    		
     		$atividade['descricao'] = $tipoAtividade['TipoAtividade']['descricao'];
     	}else{
     		$atividade = $this->Atividade->findById($id);
