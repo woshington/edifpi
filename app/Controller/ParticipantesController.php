@@ -25,7 +25,7 @@ class ParticipantesController extends AppController {
 				$this->Session->setFlash(__('The participante could not be saved. Please, try again.'));
 			}
 		}
-		$instituicaos = $this->Participante->Instituicao->find('list');
+		$instituicaos = $this->Participante->Instituicao->find('list', array('order'=>'Instituicao.sigla'));
 		$this->set(compact('instituicaos'));
 	}
 

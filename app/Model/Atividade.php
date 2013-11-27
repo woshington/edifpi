@@ -91,7 +91,7 @@ class Atividade extends AppModel {
 					)
 				));
 				foreach($index as $at){
-					$atividades[$at['Atividade']['id']] = $at['Atividade']['titulo'].": ".$at['Atividade']['descricao'].'-'.$at['Atividade']['turno'];
+					$atividades[$at['Atividade']['id']] = $at['Atividade']['titulo'].": ".$at['Atividade']['descricao'].' - '.$at['Atividade']['turno'];
 				}
 				/*if($index){
 					$atividades[$index['Atividade']['id']] = $index['Atividade']['titulo'].": ".$index['Atividade']['descricao'];
