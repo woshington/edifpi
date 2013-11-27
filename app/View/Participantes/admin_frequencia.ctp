@@ -1,6 +1,20 @@
 <div class="participantes index">
 	<table cellpadding="0" cellspacing="0">
 		<h2><?php echo __('Participantes'); ?></h2>		
+		<caption>
+			<?=
+				$this->Html->link('Imprimir', array(
+					'controller'=>'participantes',
+					'action'=>'imprimirFrequencia',
+					$id,
+					$agrupar,
+					'admin'=>1
+				),
+				array(
+					'target'=>'_blank'
+				));
+			?>
+		</caption>
 		<tr>
 			<th><?php echo 'nome'; ?></th>
 		</tr>
@@ -8,8 +22,8 @@
 			<tr>
 				<td><?php echo h($participante['Participante']['nome']); ?>&nbsp;</td>			
 			</tr>
-		<?php endforeach; ?>
-	</table>		
+		<?php endforeach; ?>		
+	</table>
 </div>
 <div class="actions">
 	<ul>

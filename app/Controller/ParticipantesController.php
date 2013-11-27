@@ -183,6 +183,40 @@ class ParticipantesController extends AppController {
 		$this->set('participantes', $this->Paginator->paginate());		
     }
     public function admin_frequencia($id = null, $agrupar = false){
+    	$participantes = array();
+    	if(!is_null($id)){
+    		$participantes = $this->getParticipantesFrequencia($id, $agrupar);
+    	}
+    	$tiposAgrupados = $this->TipoAtividade->find('list', array(
+    		'conditions'=>array(
+    			'TipoAtividade.agrupar'=>true
+			)
+		));
+		$this->set('id', $id);
+		$this->set('agrupar', $agrupar);
+    	$this->set('tiposAgrupados', $tiposAgrupados);
+    	$this->set('participantes', $participantes);    	
+    	$this->set('atividades', $this->Atividade->find('all'));
+
+    }
+    public function admin_imprimirFrequencia($id = null, $agrupar=false){
+    	$this->layout = 'pdf';
+        ini_set('memory_limit', '256M');
+    	$participantes = array();
+    	if($agrupar){
+    		$tipoAtividade = $this->TipoAtividade->find('first');
+    		$atividade['descricao'] = $tipoAtividade['TipoAtividade']['descricao'];
+    	}else{
+    		$atividade = $this->Atividade->findById($id);
+    		$atividade['descricao'] = $atividade['Atividade']['titulo'];
+    	}    	
+    	if(!is_null($id)){
+    		$participantes = $this->getParticipantesFrequencia($id, $agrupar);
+    	}    	
+        $this->set('participantes', $participantes);
+        $this->set('atividade', $atividade);
+    }
+    private function getParticipantesFrequencia($id=null, $agrupar = false){
     	if($agrupar){
     		$ats = $this->Atividade->find('list', array(
     			'fields'=>array('id'),
@@ -213,15 +247,8 @@ class ParticipantesController extends AppController {
 				),			
 				'order'=>array('InscricaoAtividade.atividade_id'),
 				'group'=>array('Participante.nome')
-	    	));				    	
+	    	));	    
+	    	return $participantes;
     	}
-    	$tiposAgrupados = $this->TipoAtividade->find('list', array(
-    		'conditions'=>array(
-    			'TipoAtividade.agrupar'=>true
-			)
-		));
-    	$this->set('tiposAgrupados', $tiposAgrupados);
-    	$this->set('participantes', $participantes);    	
-    	$this->set('atividades', $this->Atividade->find('all'));
     }
 }
