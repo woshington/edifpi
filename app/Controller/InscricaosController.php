@@ -197,7 +197,11 @@ class InscricaosController extends AppController {
     public function admin_confirmar($idInscricao){    	
     	$participante = $this->Inscricao->find('first', array('conditions'=>array('Inscricao.id'=>$idInscricao)));
     	$this->Inscricao->read(null, $idInscricao); 
-    	$this->Inscricao->set(array('status'=>true,'data_pagamento'=>date('Y-m-d')));
+    	$this->Inscricao->set(array(
+    		'status'=>true,
+    		'data_pagamento'=>date('Y-m-d'),
+    		'confirmou'=>$this->Session->read('Auth.User.id')
+    	));
     	if($this->Inscricao->save()){
     		echo "<script>alert('".$participante['Participante']['nome']." confirmado!');</script>";
     		echo "<script>window.location='".
