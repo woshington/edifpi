@@ -139,7 +139,7 @@ class ParticipantesController extends AppController {
 				$options = array('conditions' => array('Participante.' . $this->Participante->primaryKey => $idParticipante));
 				$participante = $this->Participante->find('first', $options);			
 				if ($this->Auth->login($participante['Participante'])) {
-					$this->redirect($this->Auth->redirectUrl(array('controller'=>'inscricaos', 'action'=>'index')));
+					$this->redirect($this->Auth->redirectUrl(array('controller'=>'inscricaos', 'action'=>'add')));
 				}
 			}
 		}
