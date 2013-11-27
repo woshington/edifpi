@@ -255,4 +255,31 @@ class ParticipantesController extends AppController {
 	    	return $participantes;
     	}
     }
+    public function admin_notificar(){
+    	$participantes = $this->Participante->find('all', array(
+    		'joins'=>array(
+    			array(
+    				'table'=>'inscricao',
+    				'alias'=>'Inscricao',
+    				'type'=>'left outer',
+    				'conditions'=> array('Participante.id = Inscricao.participante_id')    			
+				),
+    		),
+    		'conditions'=>array(
+    			'Inscricao.id'=>null
+    		),
+    	));
+    	foreach ($participantes as $participante) {
+    		$para = $participante['Participante']['email'];
+        	$assunto = "Inscrição do EDIFPI";
+        	$mensagem = "Sua inscrição esta incompleta acesse http://institutomulticom.com/edifpi";
+        	$mensagem .= " e complete sua inscrição";
+        	$this->sendEmail($para, $assunto, $mensagem); 
+    	}
+    	echo "<script>alert('Participantes notificados!');</script>";
+		echo "<script>window.location='".
+			Router::url(array('controller'=>'inscricaos','action'=>'listarNaoConfirmados','admin'=>1))."'</script>";
+		return;    				
+    	
+    }
 }

@@ -44,4 +44,11 @@ class AppController extends Controller {
         $data_format = explode("/", $data);
         return $data_format[2]."-".$data_format[1]."-".$data_format[0];
     }
+    protected function sendEmail($to, $subject, $message){
+        $Email = new CakeEmail();
+        $Email->from(array('edifpi2013@gmail.com' => 'EDIFPI 2013'));
+        $Email->to($to);
+        $Email->subject($subject);
+        $Email->send($message);
+    }
 }

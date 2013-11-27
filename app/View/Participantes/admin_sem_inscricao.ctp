@@ -43,8 +43,6 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Participante'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Instituicaos'), array('controller' => 'instituicaos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Instituicao'), array('controller' => 'instituicaos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Notificar'), array('action' => 'notificar','admin'=>1)); ?></li>		
 	</ul>
 </div>
