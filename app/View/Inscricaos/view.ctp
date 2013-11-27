@@ -15,12 +15,7 @@
 		<dd>
 			<?php echo h($inscricao['Inscricao']['status']==true ? 'Confirmado' : 'Não Confirmado'); ?>
 			&nbsp;
-		</dd>
-		<dt><?php echo __('Data Pagamento'); ?></dt>
-		<dd>
-			<?php echo h($inscricao['Inscricao']['data_pagamento']); ?>
-			&nbsp;
-		</dd>
+		</dd>		
 		<dt><?php echo __('Participante'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($inscricao['Participante']['nome'], array('controller' => 'participantes', 'action' => 'view', $inscricao['Participante']['id'])); ?>

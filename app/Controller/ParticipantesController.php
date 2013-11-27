@@ -101,6 +101,7 @@ class ParticipantesController extends AppController {
 	}
 
 	public function login() {		
+		//echo AuthComponent::password('EdiFpi');
 		if($this->request->is('post')){        	
             if ($this->Auth->login()) {
                 if(!$this->Session->read('Auth.User.admin')){                
