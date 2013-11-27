@@ -2,7 +2,7 @@
 App::uses('AppController', 'Controller');
 
 class InscricaosController extends AppController {
-	public $uses = array('Inscricao', 'Atividade', 'InscricaoAtividade','Participante');
+	public $uses = array('Inscricao', 'Atividade', 'InscricaoAtividade','Participante','TipoAtividade');
 	public $components = array('Paginator','RequestHandler');
 	public $helpers = array('Js');
 
@@ -194,14 +194,29 @@ class InscricaosController extends AppController {
     	$this->set("inscricaos", $this->Paginator->paginate());
     }    
 
-    public function admin_confirmar($idInscricao){    	
+    public function admin_confirmar($idInscricao){
     	$participante = $this->Inscricao->find('first', array('conditions'=>array('Inscricao.id'=>$idInscricao)));
+
+    	foreach ($participante['Atividade'] as $atividade) {
+    		if(!is_null($this->TipoAtividade->getMaxInscritos($atividade['id']))){
+    			$inscritos = $this->TipoAtividade->countInscritos($atividade['id']);;
+    			if($inscritos>=$this->TipoAtividade->getMaxInscritos($atividade['id'])){
+    				echo "<script>alert('".$atividade['titulo']." Lotado!');</script>";
+    				echo "<script>window.location='".
+    					Router::url(array('controller'=>'inscricaos','action'=>'listarNaoConfirmados','admin'=>1))."'</script>";
+
+    				return;    				
+    			}
+    		}
+    		
+    	}
+    	
     	$this->Inscricao->read(null, $idInscricao); 
     	$this->Inscricao->set(array(
     		'status'=>true,
     		'data_pagamento'=>date('Y-m-d'),
     		'confirmou'=>$this->Session->read('Auth.User.id')
-    	));
+    	));    	
     	if($this->Inscricao->save()){
     		echo "<script>alert('".$participante['Participante']['nome']." confirmado!');</script>";
     		echo "<script>window.location='".

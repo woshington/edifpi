@@ -105,4 +105,20 @@ class TipoAtividade extends AppModel {
 		)
 	);
 
+	public function countInscritos($atividade){
+		$at = $this->Atividade->findById($atividade);
+		$inscritos = 0;
+
+		foreach($at['Inscricao'] as $inscricao){
+			if($inscricao['status']){
+				$inscritos++;
+			}			
+		}
+		return $inscritos;
+	}
+	public function getMaxInscritos($atividade){
+		$at = $this->Atividade->findById($atividade);
+		return $at['TipoAtividade']['max'];
+	}
+
 }
