@@ -13,6 +13,8 @@
 		echo $this->Form->input('nome');
 		echo $this->Form->input('cpf', array('id'=>'cpf'));				
 		echo $this->Form->input('nascimento', array('id'=>'data', 'type'=>'text'));
+		echo $this->Form->input('admin', array('type'=>'checkbox', 'label'=>'admin ?'));
+		echo $this->Form->input('status', array('type'=>'checkbox', 'label'=>'ativar ?'));
 		echo $this->Form->input('instituicao_id');
 	?>
 	</fieldset>
