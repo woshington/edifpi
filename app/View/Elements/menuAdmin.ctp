@@ -29,7 +29,7 @@
 		'controller'=>'participantes',
 		'action'=>'index',
 		'admin'=>1
-	))."&nbsp;&nbsp;";	
+	))."&nbsp;&nbsp;";		
 	echo "<br />";
 	echo $this->Html->link(__('Nova Instituicao'), array(
 		'controller'=>'Instituicaos',

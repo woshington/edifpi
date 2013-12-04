@@ -1,6 +1,18 @@
 <div class="inscricaos index">
 	<h2><?php echo __('Inscricaos confirmadas'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
+	<caption>
+			<?=
+				$this->Html->link('Imprimir', array(
+					'controller'=>'participantes',
+					'action'=>'imprimirConfirmados',					
+					'admin'=>1
+				),
+				array(
+					'target'=>'_blank'
+				));
+			?>
+		</caption>
 	<tr>
 			<th><?php echo $this->Paginator->sort('data_inscricao'); ?></th>
 			<th><?php echo $this->Paginator->sort('tipo_participacao_id'); ?></th>

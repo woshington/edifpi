@@ -255,6 +255,16 @@ class ParticipantesController extends AppController {
 	    	return $participantes;
     	}
     }
+    public function admin_imprimirConfirmados(){
+    	$this->layout = 'pdf';
+        ini_set('memory_limit', '256M');
+    	$inscricoes = $this->Inscricao->find('all', array(
+    		'conditions'=>array(
+				'Inscricao.status'=>true
+			)
+    	));
+		$this->set('inscricaos', $inscricoes);
+    }
     public function admin_notificar(){
     	$participantes = $this->Participante->find('all', array(
     		'joins'=>array(
