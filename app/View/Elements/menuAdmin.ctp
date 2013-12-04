@@ -30,6 +30,11 @@
 		'action'=>'index',
 		'admin'=>1
 	))."&nbsp;&nbsp;";		
+	echo $this->Html->link(__('Sorteio'), array(
+		'controller'=>'sorteios',
+		'action'=>'index',
+		'admin'=>1
+	))."&nbsp;&nbsp;";		
 	echo "<br />";
 	echo $this->Html->link(__('Nova Instituicao'), array(
 		'controller'=>'Instituicaos',
