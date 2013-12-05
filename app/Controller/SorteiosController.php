@@ -39,9 +39,9 @@ class SorteiosController extends AppController {
 	    		),
 	    		'conditions'=>array(
 	    			'NOT'=>array(
-	    				'Participante.id'=>$participantesHj,
-	    				'Inscricao.status'=>true
-	    			)
+	    				'Participante.id'=>$participantesHj,	    				
+	    			),
+	    			'Inscricao.status'=>true
 	    		),
     		));
 			if(!$participantes){
